@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const socialLinks = [
   { icon: Github, href: 'https://github.com/AhmedSaied22', label: 'GitHub' },
@@ -8,14 +9,15 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const { t, isRTL } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-card border-t border-border py-8">
       <div className="section-container">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className={`flex flex-col md:flex-row items-center justify-between gap-4 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Ahmed Saied. All rights reserved.
+            © {currentYear} {t('hero.name')}. {t('footer.rights')}
           </p>
           
           <div className="flex items-center gap-4">
