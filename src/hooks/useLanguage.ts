@@ -31,15 +31,20 @@ export const useLanguageProvider = () => {
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
     
     if (isRTL) {
       root.setAttribute('dir', 'rtl');
       root.setAttribute('lang', 'ar');
       root.style.fontFamily = "'Cairo', 'Tajawal', sans-serif";
+      body.setAttribute('dir', 'rtl');
+      body.style.fontFamily = "'Cairo', 'Tajawal', sans-serif";
     } else {
       root.setAttribute('dir', 'ltr');
       root.setAttribute('lang', 'en');
       root.style.fontFamily = "'Inter', system-ui, -apple-system, sans-serif";
+      body.setAttribute('dir', 'ltr');
+      body.style.fontFamily = "'Inter', system-ui, -apple-system, sans-serif";
     }
     
     localStorage.setItem('language', language);
