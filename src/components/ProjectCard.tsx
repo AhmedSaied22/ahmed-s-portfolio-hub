@@ -19,6 +19,13 @@ interface ProjectCardProps {
 export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
   const { t, language, isRTL } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
+  const hasStoreLinks = Boolean(project.googlePlayUrl || project.appStoreUrl);
+  const storeNote =
+    project.storeStatus === 'internal'
+      ? t('projects.internalNote')
+      : project.storeStatus === 'comingSoon'
+        ? t('projects.comingSoonNote')
+        : null;
 
   return (
     <TooltipProvider>
@@ -46,6 +53,13 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
         <ProjectGallery images={project.images} title={project.title[language]} />
         
         <div className="p-6">
+          {project.badge && (
+            <div className={`mb-3 ${isRTL ? 'text-right' : ''}`}>
+              <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">
+                {project.badge[language]}
+              </span>
+            </div>
+          )}
           <h3 className={`text-xl font-bold text-foreground mb-2 ${isRTL ? 'text-right' : ''}`}>
             {project.title[language]}
           </h3>
@@ -103,6 +117,12 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
               {t('projects.caseStudy')}
             </Button>
           </div>
+
+          {!hasStoreLinks && storeNote && (
+            <p className={`mt-3 text-xs text-muted-foreground ${isRTL ? 'text-right' : ''}`}>
+              {storeNote}
+            </p>
+          )}
         </div>
       </div>
     </TooltipProvider>

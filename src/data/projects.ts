@@ -5,6 +5,9 @@ export interface Project {
   highlights: { en: string[]; ar: string[] };
   techTags: string[];
   images: string[];
+  category: 'featured' | 'practice';
+  badge?: { en: string; ar: string };
+  storeStatus?: 'internal' | 'comingSoon';
   googlePlayUrl?: string;
   appStoreUrl?: string;
   caseStudy: {
@@ -53,10 +56,10 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Firebase', 'AdMob', 'REST API', 'PDF Viewer'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/sport1.jpg',
+      '/projects/sport2.jpg'
     ],
+    category: 'featured',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.assuit.pe_student',
     // App Store not available for Sport Sphere
     caseStudy: {
@@ -120,10 +123,9 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Provider', 'Firebase', 'Payments', 'Marketplace'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/ask.jpg'
     ],
+    category: 'featured',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.developers.askalwashm',
     appStoreUrl: 'https://apps.apple.com/sa/app/%D8%A7%D8%B3%D8%A3%D9%84-%D8%A7%D9%84%D9%88%D8%B4%D9%85/id1669547503',
     caseStudy: {
@@ -185,10 +187,10 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Bloc', 'Maps', 'Local DB', 'REST API'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/ekram.png',
+      '/projects/ekram2.png'
     ],
+    category: 'featured',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.charitylocator.ikram',
     appStoreUrl: 'https://apps.apple.com/sa/app/ekram-%D8%A7%D9%83%D8%B1%D8%A7%D9%85/id6738956464',
     caseStudy: {
@@ -256,10 +258,11 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'E-commerce', 'Biometrics', 'Localization', 'Payments'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/carstory.jpg',
+      '/projects/carstory2.png',
+      '/projects/car3.jpg'
     ],
+    category: 'featured',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.echo.carstor',
     appStoreUrl: 'https://apps.apple.com/sa/app/car-story/id6737169387',
     caseStudy: {
@@ -289,6 +292,205 @@ export const projects: Project[] = [
           'تجربة تسوق آمنة مع المصادقة البيومترية',
           'وصول دولي من خلال التوطين',
           'عملية دفع وإتمام الشراء مبسطة'
+        ]
+      }
+    }
+  },
+  {
+    id: 'mindful-tasks',
+    title: {
+      en: 'Mindful Tasks',
+      ar: 'مهام اليقظة'
+    },
+    description: {
+      en: 'An internal productivity app focused on mindful task planning, focus routines, and wellbeing check-ins for teams.',
+      ar: 'تطبيق إنتاجية داخلي يركز على تخطيط المهام بوعي، وروتينات التركيز، وفحوصات الرفاهية للفرق.'
+    },
+    highlights: {
+      en: [
+        'Mindful task planning',
+        'Focus sessions and reminders',
+        'Team check-ins',
+        'Weekly reflections',
+        'Private internal workflows'
+      ],
+      ar: [
+        'تخطيط المهام بوعي',
+        'جلسات تركيز وتذكيرات',
+        'متابعة الفريق',
+        'تأملات أسبوعية',
+        'تدفقات داخلية خاصة'
+      ]
+    },
+    techTags: ['Flutter', 'Wellbeing', 'Productivity', 'Internal Tools'],
+    images: [
+      '/projects/taskful.jpg'
+    ],
+    category: 'featured',
+    badge: {
+      en: 'Private / Internal',
+      ar: 'خاص / داخلي'
+    },
+    storeStatus: 'internal',
+    caseStudy: {
+      problem: {
+        en: 'Teams needed a private, focused space to manage tasks while supporting mindful work habits.',
+        ar: 'احتاجت الفرق لمساحة خاصة تركز على إدارة المهام مع دعم عادات العمل الواعي.'
+      },
+      role: {
+        en: 'Collaborated on QA workflows and ensured smooth internal releases for daily use.',
+        ar: 'شاركت في تدفقات ضمان الجودة وتأكدت من سلاسة الإصدارات الداخلية للاستخدام اليومي.'
+      },
+      challenge: {
+        en: 'Maintaining privacy requirements while keeping the experience simple and calming for daily use.',
+        ar: 'الحفاظ على متطلبات الخصوصية مع إبقاء التجربة بسيطة وهادئة للاستخدام اليومي.'
+      },
+      solution: {
+        en: 'Delivered an internal app with mindful planning, guided focus routines, and weekly reflections tailored to team workflows.',
+        ar: 'تقديم تطبيق داخلي يتضمن تخطيطاً واعياً وروتينات تركيز موجهة وتأملات أسبوعية مخصصة لتدفقات الفريق.'
+      },
+      results: {
+        en: [
+          'Improved daily focus and consistency',
+          'Clearer internal planning cycles',
+          'Better team wellbeing visibility'
+        ],
+        ar: [
+          'تحسين التركيز اليومي والاستمرارية',
+          'وضوح أكبر في دورات التخطيط الداخلية',
+          'رؤية أفضل لرفاهية الفريق'
+        ]
+      }
+    }
+  },
+  {
+    id: 'filanto',
+    title: {
+      en: 'Filanto',
+      ar: 'فيلانتو'
+    },
+    description: {
+      en: 'A footwear app managing wholesale, manufacturing, and annual exhibition sales.',
+      ar: 'تطبيق للأحذية يدير البيع بالجملة والتصنيع ومبيعات المعارض السنوية.'
+    },
+    highlights: {
+      en: [
+        'Multi-user roles',
+        'Orders workflow',
+        'Payments and reports',
+        'PDF orders/receipts',
+        'Caching for faster access'
+      ],
+      ar: [
+        'أدوار مستخدمين متعددة',
+        'سير عمل الطلبات',
+        'المدفوعات والتقارير',
+        'طلبات/إيصالات PDF',
+        'تخزين مؤقت للوصول السريع'
+      ]
+    },
+    techTags: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'Firebase', 'UI/UX', 'Testing/QA'],
+    images: [
+      '/projects/filanto.png'
+    ],
+    category: 'featured',
+    badge: {
+      en: 'Coming Soon',
+      ar: 'قريباً'
+    },
+    storeStatus: 'comingSoon',
+    caseStudy: {
+      problem: {
+        en: 'The business needed a unified system for wholesale orders, manufacturing updates, and annual exhibition sales.',
+        ar: 'احتاجت الشركة إلى نظام موحد لطلبات الجملة وتحديثات التصنيع ومبيعات المعارض السنوية.'
+      },
+      role: {
+        en: 'Flutter Developer and Software Tester (QA) covering test cases, regression/exploratory testing, and defect reporting.',
+        ar: 'مطور Flutter ومختبر برمجيات (QA) يغطي حالات الاختبار واختبارات الانحدار/الاستكشاف وتوثيق العيوب.'
+      },
+      challenge: {
+        en: 'Verifying complex order workflows with multiple user roles and payment/reporting paths.',
+        ar: 'التحقق من سير عمل الطلبات المعقد مع أدوار مستخدمين متعددة ومسارات الدفع والتقارير.'
+      },
+      solution: {
+        en: 'Established QA coverage for role-based workflows, PDF outputs, caching behavior, and reporting accuracy.',
+        ar: 'تأسيس تغطية ضمان الجودة لتدفقات الأدوار المختلفة، ومخرجات PDF، وسلوك التخزين المؤقت، ودقة التقارير.'
+      },
+      results: {
+        en: [
+          'Clear QA reporting for workflows',
+          'Validated payments and reporting',
+          'Improved confidence before launch'
+        ],
+        ar: [
+          'تقارير ضمان جودة واضحة لتدفقات العمل',
+          'التحقق من المدفوعات والتقارير',
+          'تحسين الثقة قبل الإطلاق'
+        ]
+      }
+    }
+  },
+  {
+    id: 'sale-sphere',
+    title: {
+      en: 'SaleSphere',
+      ar: 'سيل سفير'
+    },
+    description: {
+      en: 'A practice e-commerce app used for training on sales flows, catalog browsing, and checkout experiences.',
+      ar: 'تطبيق تجارة إلكترونية تدريبي للتدرب على تدفقات البيع وتصفح الكتالوج وتجربة الدفع.'
+    },
+    highlights: {
+      en: [
+        'Product catalog browsing',
+        'Cart and checkout practice',
+        'Order summary simulations',
+        'Training-focused UI flows'
+      ],
+      ar: [
+        'تصفح كتالوج المنتجات',
+        'تدريب على السلة والدفع',
+        'محاكاة ملخص الطلب',
+        'تدفقات واجهة موجهة للتدريب'
+      ]
+    },
+    techTags: ['Flutter', 'Practice', 'E-commerce'],
+    images: [
+      '/projects/sale.jpg',
+      '/projects/sale2.jpg'
+    ],
+    category: 'practice',
+    badge: {
+      en: 'Practice / Training',
+      ar: 'تدريب / ممارسة'
+    },
+    caseStudy: {
+      problem: {
+        en: 'A safe environment was needed to train on end-to-end e-commerce flows without production risk.',
+        ar: 'كان هناك حاجة إلى بيئة آمنة للتدرب على تدفقات التجارة الإلكترونية دون مخاطر إنتاجية.'
+      },
+      role: {
+        en: 'Built practice flows and validated UI behavior for learning scenarios.',
+        ar: 'بناء تدفقات تدريبية والتحقق من سلوك الواجهة لسيناريوهات التعلم.'
+      },
+      challenge: {
+        en: 'Keeping the experience realistic while remaining simple enough for training sessions.',
+        ar: 'الحفاظ على تجربة واقعية مع بساطة كافية لجلسات التدريب.'
+      },
+      solution: {
+        en: 'Designed a streamlined training app that mirrors real shopping journeys with safe, repeatable scenarios.',
+        ar: 'تصميم تطبيق تدريبي مبسط يحاكي رحلات التسوق الحقيقية مع سيناريوهات آمنة وقابلة للتكرار.'
+      },
+      results: {
+        en: [
+          'Clear training on sales workflows',
+          'Improved familiarity with checkout steps',
+          'Reusable practice scenarios'
+        ],
+        ar: [
+          'تدريب واضح على تدفقات البيع',
+          'تحسين الإلمام بخطوات الدفع',
+          'سيناريوهات تدريب قابلة لإعادة الاستخدام'
         ]
       }
     }
