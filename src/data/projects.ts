@@ -53,9 +53,8 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Firebase', 'AdMob', 'REST API', 'PDF Viewer'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/sport1.jpg',
+      '/projects/sport2.jpg'
     ],
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.assuit.pe_student',
     // App Store not available for Sport Sphere
@@ -120,9 +119,7 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Provider', 'Firebase', 'Payments', 'Marketplace'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/ask.jpg'
     ],
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.developers.askalwashm',
     appStoreUrl: 'https://apps.apple.com/sa/app/%D8%A7%D8%B3%D8%A3%D9%84-%D8%A7%D9%84%D9%88%D8%B4%D9%85/id1669547503',
@@ -185,9 +182,8 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Bloc', 'Maps', 'Local DB', 'REST API'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/ekram.png',
+      '/projects/ekram2.png'
     ],
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.charitylocator.ikram',
     appStoreUrl: 'https://apps.apple.com/sa/app/ekram-%D8%A7%D9%83%D8%B1%D8%A7%D9%85/id6738956464',
@@ -256,9 +252,9 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'E-commerce', 'Biometrics', 'Localization', 'Payments'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/carstory.jpg',
+      '/projects/carstory2.png',
+      '/projects/car3.jpg'
     ],
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.echo.carstor',
     appStoreUrl: 'https://apps.apple.com/sa/app/car-story/id6737169387',
