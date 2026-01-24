@@ -8,6 +8,7 @@ export const Projects = () => {
   const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<'featured' | 'practice' | 'all'>('featured');
 
   const handleOpenCaseStudy = (project: Project) => {
     setSelectedProject(project);
@@ -19,6 +20,17 @@ export const Projects = () => {
     setSelectedProject(null);
   };
 
+  const filters = [
+    { key: 'featured', label: t('projects.filters.featured') },
+    { key: 'practice', label: t('projects.filters.practice') },
+    { key: 'all', label: t('projects.filters.all') },
+  ] as const;
+
+  const filteredProjects =
+    activeFilter === 'all'
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
+
   return (
     <section id="projects" className="section-padding bg-card">
       <div className="section-container">
@@ -29,8 +41,25 @@ export const Projects = () => {
           {t('projects.subtitle')}
         </p>
 
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {filters.map((filter) => (
+            <button
+              key={filter.key}
+              type="button"
+              onClick={() => setActiveFilter(filter.key)}
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
+                activeFilter === filter.key
+                  ? 'bg-primary text-primary-foreground border-primary'
+                  : 'bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               className="opacity-0 animate-fade-in-up"
