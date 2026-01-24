@@ -29,10 +29,10 @@ export const Services = () => {
   return (
     <section id="services" className="section-padding">
       <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+        <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('services.title')}
         </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p className={`${isRTL ? 'text-right' : 'text-center'} text-muted-foreground mb-12 max-w-2xl mx-auto`}>
           {t('services.subtitle')}
         </p>
 
@@ -40,7 +40,9 @@ export const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.titleKey}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-200 opacity-0 animate-fade-in-up"
+              className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-200 opacity-0 animate-fade-in-up ${
+                isRTL ? 'text-right' : ''
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`p-3 rounded-xl bg-primary/10 w-fit mb-4 ${isRTL ? 'mr-0 ml-auto' : ''}`}>

@@ -106,7 +106,7 @@ export const Contact = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
           {t('contact.title')}
         </h2>
-        <p className="text-center text-primary font-medium mb-8">
+        <p className={`${isRTL ? 'text-right' : 'text-center'} text-primary font-medium mb-8`}>
           {t('contact.subtitle')}
         </p>
 
@@ -135,7 +135,7 @@ export const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Links */}
-          <div className="space-y-6">
+          <div className={`space-y-6 ${isRTL ? 'lg:order-2 text-right' : 'lg:order-1'}`}>
             <h3 className={`text-xl font-semibold text-foreground mb-4 ${isRTL ? 'text-right' : ''}`}>
               {t('contact.letsConnect')}
             </h3>
@@ -161,7 +161,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div>
+          <div className={isRTL ? 'lg:order-1' : 'lg:order-2'}>
             <h3 className={`text-xl font-semibold text-foreground mb-4 ${isRTL ? 'text-right' : ''}`}>
               {t('contact.sendMessage')}
             </h3>

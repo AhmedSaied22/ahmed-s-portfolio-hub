@@ -324,8 +324,7 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Wellbeing', 'Productivity', 'Internal Tools'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/taskful.jpg'
     ],
     category: 'featured',
     badge: {
@@ -392,8 +391,7 @@ export const projects: Project[] = [
     },
     techTags: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'Firebase', 'UI/UX', 'Testing/QA'],
     images: [
-      '/placeholder.svg',
-      '/placeholder.svg'
+      '/projects/filanto.png'
     ],
     category: 'featured',
     badge: {
@@ -407,8 +405,8 @@ export const projects: Project[] = [
         ar: 'احتاجت الشركة إلى نظام موحد لطلبات الجملة وتحديثات التصنيع ومبيعات المعارض السنوية.'
       },
       role: {
-        en: 'Software Tester (QA) covering test cases, regression/exploratory testing, and defect reporting.',
-        ar: 'مختبر برمجيات (QA) يغطي حالات الاختبار واختبارات الانحدار/الاستكشاف وتوثيق العيوب.'
+        en: 'Flutter Developer and Software Tester (QA) covering test cases, regression/exploratory testing, and defect reporting.',
+        ar: 'مطور Flutter ومختبر برمجيات (QA) يغطي حالات الاختبار واختبارات الانحدار/الاستكشاف وتوثيق العيوب.'
       },
       challenge: {
         en: 'Verifying complex order workflows with multiple user roles and payment/reporting paths.',

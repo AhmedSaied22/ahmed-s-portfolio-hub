@@ -11,6 +11,7 @@ const socialLinks = [
 
 export const Hero = () => {
   const { t, isRTL } = useLanguage();
+  const orderedSocialLinks = isRTL ? [...socialLinks].reverse() : socialLinks;
 
   const handleViewProjects = () => {
     const element = document.querySelector('#projects');
@@ -42,7 +43,11 @@ export const Hero = () => {
               {/* Headline */}
               <div className="space-y-3 opacity-0 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 <p className="text-primary font-medium">{t('hero.greeting')}</p>
-                <div className="flex items-center gap-3 justify-center lg:justify-start flex-wrap">
+                <div
+                  className={`flex items-center gap-3 justify-center flex-wrap ${
+                    isRTL ? 'lg:justify-end flex-row-reverse' : 'lg:justify-start'
+                  }`}
+                >
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
                     {t('hero.name')}
                   </h1>
@@ -66,7 +71,12 @@ export const Hero = () => {
               </p>
 
               {/* Primary CTAs */}
-              <div className={`flex flex-wrap gap-3 opacity-0 animate-fade-in ${isRTL ? 'justify-center lg:justify-end' : 'justify-center lg:justify-start'}`} style={{ animationDelay: '0.3s' }}>
+              <div
+                className={`flex flex-wrap gap-3 opacity-0 animate-fade-in ${
+                  isRTL ? 'justify-center lg:justify-end flex-row-reverse' : 'justify-center lg:justify-start'
+                }`}
+                style={{ animationDelay: '0.3s' }}
+              >
                 <Button
                   asChild
                   size="lg"
@@ -102,10 +112,17 @@ export const Hero = () => {
               </div>
 
               {/* Secondary CTA + Social Links in same row */}
-              <div className={`flex items-center gap-4 opacity-0 animate-fade-in ${isRTL ? 'justify-center lg:justify-end' : 'justify-center lg:justify-start'}`} style={{ animationDelay: '0.4s' }}>
+              <div
+                className={`flex items-center gap-4 opacity-0 animate-fade-in ${
+                  isRTL ? 'justify-center lg:justify-end flex-row-reverse' : 'justify-center lg:justify-start'
+                }`}
+                style={{ animationDelay: '0.4s' }}
+              >
                 <button
                   onClick={handleViewProjects}
-                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                  className={`inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors ${
+                    isRTL ? 'flex-row-reverse' : ''
+                  }`}
                 >
                   <ArrowDown className="w-4 h-4" />
                   <span className="text-sm font-medium">{t('hero.viewProjects')}</span>
@@ -114,8 +131,8 @@ export const Hero = () => {
                 <div className="h-4 w-px bg-border" />
                 
                 {/* Social Links */}
-                <div className="flex gap-2">
-                  {socialLinks.map((social) => (
+                <div className={`flex gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  {orderedSocialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}

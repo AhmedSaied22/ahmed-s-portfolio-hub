@@ -11,12 +11,14 @@ export const QAExperience = () => {
     <section className="section-padding bg-card">
       <div className="section-container">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+          <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>
             {t('qaExperience.title')}
           </h2>
-          <p className="text-center text-primary font-medium mb-8">{t('qaExperience.experience')}</p>
+          <p className={`${isRTL ? 'text-right' : 'text-center'} text-primary font-medium mb-8`}>
+            {t('qaExperience.experience')}
+          </p>
           
-          <div className="space-y-4 mb-8">
+          <div className={`space-y-4 mb-8 ${isRTL ? 'text-right' : ''}`}>
             {experiencePoints.map((point, index) => (
               <div
                 key={index}
