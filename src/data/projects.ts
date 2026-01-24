@@ -94,6 +94,73 @@ export const projects: Project[] = [
     }
   },
   {
+    id: 'filanto',
+    title: {
+      en: 'Filanto',
+      ar: 'فيلانتو'
+    },
+    description: {
+      en: 'A footwear app managing wholesale, manufacturing, and annual exhibition sales.',
+      ar: 'تطبيق للأحذية يدير البيع بالجملة والتصنيع ومبيعات المعارض السنوية.'
+    },
+    highlights: {
+      en: [
+        'Multi-user roles',
+        'Orders workflow',
+        'Payments and reports',
+        'PDF orders/receipts',
+        'Caching for faster access'
+      ],
+      ar: [
+        'أدوار مستخدمين متعددة',
+        'سير عمل الطلبات',
+        'المدفوعات والتقارير',
+        'طلبات/إيصالات PDF',
+        'تخزين مؤقت للوصول السريع'
+      ]
+    },
+    techTags: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'Firebase', 'UI/UX', 'Testing/QA'],
+    images: [
+      '/projects/filanto.png'
+    ],
+    category: 'featured',
+    badge: {
+      en: 'Coming Soon',
+      ar: 'قريباً'
+    },
+    storeStatus: 'comingSoon',
+    caseStudy: {
+      problem: {
+        en: 'The business needed a unified system for wholesale orders, manufacturing updates, and annual exhibition sales.',
+        ar: 'احتاجت الشركة إلى نظام موحد لطلبات الجملة وتحديثات التصنيع ومبيعات المعارض السنوية.'
+      },
+      role: {
+        en: 'Flutter Developer and Software Tester (QA) covering test cases, regression/exploratory testing, and defect reporting.',
+        ar: 'مطور Flutter ومختبر برمجيات (QA) يغطي حالات الاختبار واختبارات الانحدار/الاستكشاف وتوثيق العيوب.'
+      },
+      challenge: {
+        en: 'Verifying complex order workflows with multiple user roles and payment/reporting paths.',
+        ar: 'التحقق من سير عمل الطلبات المعقد مع أدوار مستخدمين متعددة ومسارات الدفع والتقارير.'
+      },
+      solution: {
+        en: 'Established QA coverage for role-based workflows, PDF outputs, caching behavior, and reporting accuracy.',
+        ar: 'تأسيس تغطية ضمان الجودة لتدفقات الأدوار المختلفة، ومخرجات PDF، وسلوك التخزين المؤقت، ودقة التقارير.'
+      },
+      results: {
+        en: [
+          'Clear QA reporting for workflows',
+          'Validated payments and reporting',
+          'Improved confidence before launch'
+        ],
+        ar: [
+          'تقارير ضمان جودة واضحة لتدفقات العمل',
+          'التحقق من المدفوعات والتقارير',
+          'تحسين الثقة قبل الإطلاق'
+        ]
+      }
+    }
+  },
+  {
     id: 'askalwashm',
     title: {
       en: 'AskAlwashm',
@@ -363,73 +430,7 @@ export const projects: Project[] = [
       }
     }
   },
-  {
-    id: 'filanto',
-    title: {
-      en: 'Filanto',
-      ar: 'فيلانتو'
-    },
-    description: {
-      en: 'A footwear app managing wholesale, manufacturing, and annual exhibition sales.',
-      ar: 'تطبيق للأحذية يدير البيع بالجملة والتصنيع ومبيعات المعارض السنوية.'
-    },
-    highlights: {
-      en: [
-        'Multi-user roles',
-        'Orders workflow',
-        'Payments and reports',
-        'PDF orders/receipts',
-        'Caching for faster access'
-      ],
-      ar: [
-        'أدوار مستخدمين متعددة',
-        'سير عمل الطلبات',
-        'المدفوعات والتقارير',
-        'طلبات/إيصالات PDF',
-        'تخزين مؤقت للوصول السريع'
-      ]
-    },
-    techTags: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'Firebase', 'UI/UX', 'Testing/QA'],
-    images: [
-      '/projects/filanto.png'
-    ],
-    category: 'featured',
-    badge: {
-      en: 'Coming Soon',
-      ar: 'قريباً'
-    },
-    storeStatus: 'comingSoon',
-    caseStudy: {
-      problem: {
-        en: 'The business needed a unified system for wholesale orders, manufacturing updates, and annual exhibition sales.',
-        ar: 'احتاجت الشركة إلى نظام موحد لطلبات الجملة وتحديثات التصنيع ومبيعات المعارض السنوية.'
-      },
-      role: {
-        en: 'Flutter Developer and Software Tester (QA) covering test cases, regression/exploratory testing, and defect reporting.',
-        ar: 'مطور Flutter ومختبر برمجيات (QA) يغطي حالات الاختبار واختبارات الانحدار/الاستكشاف وتوثيق العيوب.'
-      },
-      challenge: {
-        en: 'Verifying complex order workflows with multiple user roles and payment/reporting paths.',
-        ar: 'التحقق من سير عمل الطلبات المعقد مع أدوار مستخدمين متعددة ومسارات الدفع والتقارير.'
-      },
-      solution: {
-        en: 'Established QA coverage for role-based workflows, PDF outputs, caching behavior, and reporting accuracy.',
-        ar: 'تأسيس تغطية ضمان الجودة لتدفقات الأدوار المختلفة، ومخرجات PDF، وسلوك التخزين المؤقت، ودقة التقارير.'
-      },
-      results: {
-        en: [
-          'Clear QA reporting for workflows',
-          'Validated payments and reporting',
-          'Improved confidence before launch'
-        ],
-        ar: [
-          'تقارير ضمان جودة واضحة لتدفقات العمل',
-          'التحقق من المدفوعات والتقارير',
-          'تحسين الثقة قبل الإطلاق'
-        ]
-      }
-    }
-  },
+
   {
     id: 'sale-sphere',
     title: {

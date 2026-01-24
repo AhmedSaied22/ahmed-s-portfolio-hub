@@ -16,14 +16,15 @@ export const translations = {
     name: { en: 'Ahmed Saied', ar: 'أحمد سعيد' },
     title: { en: 'Flutter Developer | Software QA (Manual + Selenium Automation)', ar: 'مطور Flutter | ضمان جودة البرمجيات (يدوي + أتمتة Selenium)' },
     intro: {
-      en: 'I build production-ready Flutter apps with a strong quality mindset. I also have 1 year of hands-on QA experience in manual testing and automation using Selenium, focusing on stable releases and great user experience.',
-      ar: 'أقوم ببناء تطبيقات Flutter جاهزة للإنتاج مع عقلية جودة قوية. لدي أيضاً سنة من الخبرة العملية في ضمان الجودة في الاختبار اليدوي والأتمتة باستخدام Selenium، مع التركيز على الإصدارات المستقرة وتجربة المستخدم الممتازة.'
+      en: 'I\'m a Flutter mobile developer with 2+ years of experience building production-ready apps. I also have 1 year of hands-on Software QA experience in manual testing and Selenium automation, focusing on stable releases and great user experience.',
+      ar: 'أنا مطور تطبيقات موبايل باستخدام Flutter بخبرة تزيد عن سنتين في بناء تطبيقات جاهزة للإنتاج. بالإضافة إلى خبرة سنة في مجال ضمان الجودة (Software QA) تشمل الاختبار اليدوي وأتمتة الاختبارات باستخدام Selenium، مع التركيز على الاستقرار وتجربة مستخدم ممتازة.'
     },
     qaMindset: { en: 'QA Mindset', ar: 'عقلية الجودة' },
     chatWhatsApp: { en: 'Chat on WhatsApp', ar: 'تواصل عبر واتساب' },
     flutterCV: { en: 'Flutter CV', ar: 'سيرة Flutter' },
     testingCV: { en: 'Testing CV', ar: 'سيرة الاختبار' },
     viewProjects: { en: 'View Projects', ar: 'عرض المشاريع' },
+    tagline: { en: 'Flutter developer with a QA mindset.', ar: 'مطور Flutter بعقلية QA.' },
   },
 
   // About
@@ -71,6 +72,38 @@ export const translations = {
       en: 'I\'m actively developing advanced automation skills and planning to grow into performance testing (e.g., JMeter) and modern automation frameworks.',
       ar: 'أقوم بتطوير مهارات الأتمتة المتقدمة بنشاط وأخطط للنمو في اختبار الأداء (مثل JMeter) وأطر الأتمتة الحديثة.'
     },
+  },
+
+
+  // Flutter Experience
+  flutterExperience: {
+    title: { en: 'Flutter Experience', ar: 'خبرة Flutter' },
+    summary: {
+      en: '2+ years building mobile apps with Flutter across multiple domains, with strong architecture and performance focus.',
+      ar: 'خبرة +2 سنوات في تطوير تطبيقات موبايل باستخدام Flutter في مجالات متعددة مع تركيز على المعمارية والأداء.'
+    },
+    groups: {
+      core: {
+        title: { en: 'Mobile / Flutter Core', ar: 'أساسيات Flutter / الموبايل' },
+        skills: { en: ['Flutter', 'Dart', 'State Management (BLoC, Cubit, Provider)'], ar: ['Flutter', 'Dart', 'State Management (BLoC, Cubit, Provider)'] }
+      },
+      backend: {
+        title: { en: 'Backend & Integrations', ar: 'الخلفية والتكامل' },
+        skills: { en: ['REST APIs, Dio, http', 'Firebase, Supabase', 'Push Notifications', 'Maps, Location'], ar: ['REST APIs, Dio, http', 'Firebase, Supabase', 'Push Notifications', 'Maps, Location'] }
+      },
+      database: {
+        title: { en: 'Databases & Storage', ar: 'قواعد البيانات والتخزين' },
+        skills: { en: ['SQL, NoSQL', 'PostgreSQL, MongoDB', 'Local Storage, Secure Storage'], ar: ['SQL, NoSQL', 'PostgreSQL, MongoDB', 'Local Storage, Secure Storage'] }
+      },
+      payments: {
+        title: { en: 'Payments', ar: 'المدفوعات' },
+        skills: { en: ['Stripe, Payment Integration', 'Riyad Pay', 'Edfa Pay'], ar: ['Stripe, Payment Integration', 'Riyad Pay', 'Edfa Pay'] }
+      },
+      architecture: {
+        title: { en: 'Architecture & Quality', ar: 'المعمارية والجودة' },
+        skills: { en: ['MVVM, MVC, Clean Architecture', 'SOLID, OOP', 'UI/UX, Files handling'], ar: ['MVVM, MVC, Clean Architecture', 'SOLID, OOP', 'UI/UX, Files handling'] }
+      }
+    }
   },
 
   // Services
@@ -163,15 +196,15 @@ export const translations = {
 export const getTranslation = (lang: Language, key: string) => {
   const keys = key.split('.');
   let value: any = translations;
-  
+
   for (const k of keys) {
     if (value[k] === undefined) return key;
     value = value[k];
   }
-  
+
   if (typeof value === 'object' && value[lang] !== undefined) {
     return value[lang];
   }
-  
+
   return key;
 };
