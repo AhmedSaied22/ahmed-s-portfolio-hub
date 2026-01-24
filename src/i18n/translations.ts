@@ -106,10 +106,17 @@ export const translations = {
   // Projects
   projects: {
     title: { en: 'Featured Projects', ar: 'المشاريع المميزة' },
-    subtitle: { en: 'Production apps deployed on Google Play and App Store', ar: 'تطبيقات إنتاجية منشورة على Google Play و App Store' },
+    subtitle: { en: 'Selected work across production, internal, and upcoming releases', ar: 'مختارات من أعمال الإنتاج والتطبيقات الداخلية والإصدارات القادمة' },
     googlePlay: { en: 'Google Play', ar: 'Google Play' },
     appStore: { en: 'App Store', ar: 'App Store' },
     caseStudy: { en: 'Case Study', ar: 'دراسة الحالة' },
+    internalNote: { en: 'Internal company app (not publicly available)', ar: 'تطبيق داخلي للشركة (غير متاح للعامة)' },
+    comingSoonNote: { en: 'Coming soon', ar: 'قريباً' },
+    filters: {
+      featured: { en: 'Featured', ar: 'مميزة' },
+      practice: { en: 'Practice', ar: 'تدريب' },
+      all: { en: 'All', ar: 'الكل' },
+    },
     problem: { en: 'Problem', ar: 'المشكلة' },
     myRole: { en: 'My Role', ar: 'دوري' },
     keyFeatures: { en: 'Key Features', ar: 'الميزات الرئيسية' },

@@ -40,7 +40,7 @@ const contactLinks = [
 // 2. Create an access key for your email: ahmedsaied2019201@gmail.com
 // 3. Replace the placeholder below with your actual access key
 // ============================================================
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+const WEB3FORMS_ACCESS_KEY = '89d0b0ea-cc2b-4528-90a7-cf7816e295d2';
 
 export const Contact = () => {
   const { toast } = useToast();
