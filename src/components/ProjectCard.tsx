@@ -1,7 +1,15 @@
-import { ExternalLink, FileText } from 'lucide-react';
+import { ExternalLink, FileText, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ProjectGallery } from './ProjectGallery';
 import { Project } from '@/data/projects';
+import { useLanguage } from '@/hooks/useLanguage';
+import { useState } from 'react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 interface ProjectCardProps {
   project: Project;
@@ -9,69 +17,94 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
+  const { t, language, isRTL } = useLanguage();
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-200">
-      <ProjectGallery images={project.images} title={project.title} />
-      
-      <div className="p-6">
-        <h3 className="text-xl font-semibold text-foreground mb-2">
-          {project.title}
-        </h3>
-        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-          {project.description}
-        </p>
+    <TooltipProvider>
+      <div 
+        className="group bg-background border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-200 relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* QA Tooltip on hover */}
+        {isHovered && (
+          <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'} z-10 animate-fade-in`}>
+            <Tooltip open>
+              <TooltipTrigger asChild>
+                <div className="p-2 bg-primary/10 rounded-full border border-primary/20">
+                  <Shield className="w-4 h-4 text-primary" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent side={isRTL ? 'left' : 'right'} className="max-w-[200px]">
+                <p className="text-xs">{t('projects.qaTooltip')}</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+        )}
 
-        {/* Tech Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.techTags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded-md"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        <ProjectGallery images={project.images} title={project.title[language]} />
+        
+        <div className="p-6">
+          <h3 className={`text-xl font-bold text-foreground mb-2 ${isRTL ? 'text-right' : ''}`}>
+            {project.title[language]}
+          </h3>
+          <p className={`text-muted-foreground text-sm mb-4 line-clamp-2 ${isRTL ? 'text-right' : ''}`}>
+            {project.description[language]}
+          </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-wrap gap-2">
-          {project.googlePlayUrl && (
+          {/* Tech Tags */}
+          <div className={`flex flex-wrap gap-2 mb-4 ${isRTL ? 'justify-end' : ''}`}>
+            {project.techTags.map((tag) => (
+              <span
+                key={tag}
+                className="px-2.5 py-1 text-xs font-medium bg-primary/10 text-primary rounded-md"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Action Buttons */}
+          <div className={`flex flex-wrap gap-2 ${isRTL ? 'justify-end' : ''}`}>
+            {project.googlePlayUrl && (
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="rounded-lg gap-1.5 text-xs"
+              >
+                <a href={project.googlePlayUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  {t('projects.googlePlay')}
+                </a>
+              </Button>
+            )}
+            {project.appStoreUrl && (
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="rounded-lg gap-1.5 text-xs"
+              >
+                <a href={project.appStoreUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  {t('projects.appStore')}
+                </a>
+              </Button>
+            )}
             <Button
-              asChild
               size="sm"
-              variant="outline"
-              className="rounded-lg gap-1.5 text-xs"
+              variant="ghost"
+              className="rounded-lg gap-1.5 text-xs text-primary hover:text-primary"
+              onClick={() => onOpenCaseStudy(project)}
             >
-              <a href={project.googlePlayUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-3.5 h-3.5" />
-                Google Play
-              </a>
+              <FileText className="w-3.5 h-3.5" />
+              {t('projects.caseStudy')}
             </Button>
-          )}
-          {project.appStoreUrl && (
-            <Button
-              asChild
-              size="sm"
-              variant="outline"
-              className="rounded-lg gap-1.5 text-xs"
-            >
-              <a href={project.appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-3.5 h-3.5" />
-                App Store
-              </a>
-            </Button>
-          )}
-          <Button
-            size="sm"
-            variant="ghost"
-            className="rounded-lg gap-1.5 text-xs text-primary hover:text-primary"
-            onClick={() => onOpenCaseStudy(project)}
-          >
-            <FileText className="w-3.5 h-3.5" />
-            Case Study
-          </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </TooltipProvider>
   );
 };

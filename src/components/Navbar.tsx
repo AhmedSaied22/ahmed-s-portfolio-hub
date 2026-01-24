@@ -1,19 +1,21 @@
 import { useState } from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
+import { useLanguage } from '@/hooks/useLanguage';
 import { Button } from '@/components/ui/button';
-
-const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#services', label: 'Services' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
-];
 
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t, isRTL } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '#home', labelKey: 'nav.home' },
+    { href: '#projects', labelKey: 'nav.projects' },
+    { href: '#services', labelKey: 'nav.services' },
+    { href: '#about', labelKey: 'nav.about' },
+    { href: '#contact', labelKey: 'nav.contact' },
+  ];
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -21,6 +23,10 @@ export const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'ar' : 'en');
   };
 
   return (
@@ -33,11 +39,11 @@ export const Navbar = () => {
             onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
             className="text-xl font-semibold text-foreground hover:text-primary transition-colors"
           >
-            Ahmed Saied
+            {t('hero.name')}
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -45,9 +51,20 @@ export const Navbar = () => {
                 onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                 className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </a>
             ))}
+            
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50"
+              aria-label="Toggle language"
+            >
+              <Globe className="w-4 h-4" />
+              <span>{language === 'en' ? 'AR' : 'EN'}</span>
+            </button>
+
             <Button
               variant="ghost"
               size="icon"
@@ -65,6 +82,16 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
+            {/* Language Toggle Mobile */}
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 px-2 py-1 text-xs font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted/50"
+              aria-label="Toggle language"
+            >
+              <Globe className="w-4 h-4" />
+              <span>{language === 'en' ? 'AR' : 'EN'}</span>
+            </button>
+            
             <Button
               variant="ghost"
               size="icon"
@@ -105,7 +132,7 @@ export const Navbar = () => {
                   onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                   className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-muted/50 rounded-lg transition-colors"
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </a>
               ))}
             </div>
