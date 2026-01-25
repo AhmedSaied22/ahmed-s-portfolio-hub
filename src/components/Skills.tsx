@@ -28,9 +28,9 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
+        <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-12 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('skills.title')}
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -40,13 +40,13 @@ export const Skills = () => {
               className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors opacity-0 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`flex items-center gap-3 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10">
                   <group.icon className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground">{t(group.titleKey)}</h3>
               </div>
-              <div className={`flex flex-wrap gap-2 ${isRTL ? 'justify-end' : ''}`}>
+              <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
