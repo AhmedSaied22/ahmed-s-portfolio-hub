@@ -101,12 +101,12 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding">
+    <section id="contact" className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+        <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('contact.title')}
         </h2>
-        <p className={`${isRTL ? 'text-right' : 'text-center'} text-primary font-medium mb-8`}>
+        <p className={`text-primary font-medium mb-8 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('contact.subtitle')}
         </p>
 
@@ -135,8 +135,8 @@ export const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Links */}
-          <div className={`space-y-6 ${isRTL ? 'lg:order-2 text-right' : 'lg:order-1'}`}>
-            <h3 className={`text-xl font-semibold text-foreground mb-4 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`space-y-6 ${isRTL ? 'lg:order-2' : 'lg:order-1'}`}>
+            <h3 className="text-xl font-semibold text-foreground mb-4">
               {t('contact.letsConnect')}
             </h3>
             <div className="space-y-4">
@@ -146,12 +146,12 @@ export const Contact = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group ${isRTL ? 'flex-row-reverse' : ''}`}
+                  className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors group"
                 >
                   <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                     <link.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <div className={isRTL ? 'text-right' : ''}>
+                  <div>
                     <p className="text-sm text-muted-foreground">{t(link.labelKey)}</p>
                     <p className="font-medium text-foreground">{link.value}</p>
                   </div>

@@ -37,10 +37,10 @@ export const FlutterExperience = () => {
     ];
 
     return (
-        <section className="section-padding bg-card/50">
+        <section className="section-padding bg-card/50" dir={isRTL ? 'rtl' : 'ltr'}>
             <div className="section-container">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-10">
+                    <div className={`mb-10 ${isRTL ? 'text-right' : 'text-center'}`}>
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                             {t('flutterExperience.title')}
                         </h2>
@@ -63,13 +63,13 @@ export const FlutterExperience = () => {
                                     key={group.key}
                                     className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors ${index === experienceGroups.length - 1 ? 'md:col-span-2 md:w-2/3 md:mx-auto' : ''}`}
                                 >
-                                    <div className={`flex items-center gap-3 mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                                    <div className="flex items-center gap-3 mb-4">
                                         <div className="p-2 rounded-lg bg-primary/10">
                                             <group.icon className="w-5 h-5 text-primary" />
                                         </div>
                                         <h3 className="font-semibold text-foreground">{title}</h3>
                                     </div>
-                                    <div className={`flex flex-wrap gap-2 ${isRTL ? 'justify-end' : ''}`}>
+                                    <div className="flex flex-wrap gap-2">
                                         {skills.map((skill: string) => (
                                             <span
                                                 key={skill}

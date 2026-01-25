@@ -27,12 +27,12 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding">
+    <section id="services" className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="section-container">
         <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('services.title')}
         </h2>
-        <p className={`${isRTL ? 'text-right' : 'text-center'} text-muted-foreground mb-12 max-w-2xl mx-auto`}>
+        <p className={`text-muted-foreground mb-12 max-w-2xl mx-auto ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('services.subtitle')}
         </p>
 
@@ -40,23 +40,21 @@ export const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.titleKey}
-              className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-200 opacity-0 animate-fade-in-up ${
-                isRTL ? 'text-right' : ''
-              }`}
+              className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-200 opacity-0 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`p-3 rounded-xl bg-primary/10 w-fit mb-4 ${isRTL ? 'mr-0 ml-auto' : ''}`}>
+              <div className="p-3 rounded-xl bg-primary/10 w-fit mb-4">
                 <service.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className={`text-xl font-semibold text-foreground mb-2 ${isRTL ? 'text-right' : ''}`}>
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 {t(service.titleKey)}
               </h3>
-              <p className={`text-muted-foreground text-sm mb-4 ${isRTL ? 'text-right' : ''}`}>
+              <p className="text-muted-foreground text-sm mb-4">
                 {t(service.descriptionKey)}
               </p>
               <ul className="space-y-2">
                 {service.features.map((feature) => (
-                  <li key={feature} className={`flex items-center gap-2 text-sm text-muted-foreground ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                  <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                     {feature}
                   </li>

@@ -31,6 +31,7 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
     <TooltipProvider>
       <div 
         className="group bg-background border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-200 relative"
+        dir={isRTL ? 'rtl' : 'ltr'}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -54,21 +55,21 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
         
         <div className="p-6">
           {project.badge && (
-            <div className={`mb-3 ${isRTL ? 'text-right' : ''}`}>
+            <div className="mb-3">
               <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold">
                 {project.badge[language]}
               </span>
             </div>
           )}
-          <h3 className={`text-xl font-bold text-foreground mb-2 ${isRTL ? 'text-right' : ''}`}>
+          <h3 className="text-xl font-bold text-foreground mb-2">
             {project.title[language]}
           </h3>
-          <p className={`text-muted-foreground text-sm mb-4 line-clamp-2 ${isRTL ? 'text-right' : ''}`}>
+          <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
             {project.description[language]}
           </p>
 
           {/* Tech Tags */}
-          <div className={`flex flex-wrap gap-2 mb-4 ${isRTL ? 'justify-end' : ''}`}>
+          <div className="flex flex-wrap gap-2 mb-4">
             {project.techTags.map((tag) => (
               <span
                 key={tag}
@@ -80,7 +81,7 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
           </div>
 
           {/* Action Buttons */}
-          <div className={`flex flex-wrap gap-2 ${isRTL ? 'justify-end' : ''}`}>
+          <div className="flex flex-wrap gap-2">
             {project.googlePlayUrl && (
               <Button
                 asChild
@@ -119,7 +120,7 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
           </div>
 
           {!hasStoreLinks && storeNote && (
-            <p className={`mt-3 text-xs text-muted-foreground ${isRTL ? 'text-right' : ''}`}>
+            <p className="mt-3 text-xs text-muted-foreground">
               {storeNote}
             </p>
           )}
