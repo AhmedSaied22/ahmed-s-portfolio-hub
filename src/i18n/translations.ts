@@ -14,7 +14,7 @@ export const translations = {
   hero: {
     greeting: { en: 'Hello, I\'m', ar: 'مرحباً، أنا' },
     name: { en: 'Ahmed Saied', ar: 'أحمد سعيد' },
-    title: { en: 'Flutter Developer | Software QA (Manual + Selenium Automation)', ar: 'مطور Flutter | ضمان جودة البرمجيات (يدوي + أتمتة Selenium)' },
+    title: { en: 'Software Developer (Mobile Applications) | Software QA (Manual + Selenium Automation)', ar: 'مطور برمجيات (تطبيقات الهاتف) | ضمان جودة البرمجيات (يدوي + أتمتة Selenium)' },
     intro: {
       en: 'I\'m a Flutter mobile developer with 2+ years of experience building production-ready apps. I also have 1 year of hands-on Software QA experience in manual testing and Selenium automation, focusing on stable releases and great user experience.',
       ar: 'أنا مطور تطبيقات موبايل باستخدام Flutter بخبرة تزيد عن سنتين في بناء تطبيقات جاهزة للإنتاج. بالإضافة إلى خبرة سنة في مجال ضمان الجودة (Software QA) تشمل الاختبار اليدوي وأتمتة الاختبارات باستخدام Selenium، مع التركيز على الاستقرار وتجربة مستخدم ممتازة.'
@@ -34,7 +34,7 @@ export const translations = {
       en: 'I\'m a Flutter Developer with experience building production-ready mobile applications. I specialize in clean architecture, state management (Bloc, Provider), REST API integration, and Firebase services. Beyond development, I bring 1 year of Software QA experience in structured testing—including functional, regression, and exploratory testing. I create detailed test cases, comprehensive bug reports, and ensure quality through API testing with Postman and automation using Selenium (Java). My dual background helps me deliver both high-quality code and thoroughly tested applications.',
       ar: 'أنا مطور Flutter ذو خبرة في بناء تطبيقات الهاتف الجاهزة للإنتاج. أتخصص في الهندسة النظيفة، وإدارة الحالة (Bloc, Provider)، وتكامل REST API، وخدمات Firebase. بالإضافة إلى التطوير، لدي سنة من الخبرة في ضمان جودة البرمجيات في الاختبار المنظم—بما في ذلك الاختبار الوظيفي، واختبار الانحدار، والاختبار الاستكشافي. أقوم بإنشاء حالات اختبار مفصلة، وتقارير أخطاء شاملة، وضمان الجودة من خلال اختبار API باستخدام Postman والأتمتة باستخدام Selenium (Java). خلفيتي المزدوجة تساعدني على تقديم كود عالي الجودة وتطبيقات مختبرة بدقة.'
     },
-    flutterDeveloper: { en: 'Flutter Developer', ar: 'مطور Flutter' },
+    flutterDeveloper: { en: 'Software Developer (Mobile Applications)', ar: 'مطور برمجيات (تطبيقات الهاتف)' },
     qaExperience: { en: '1 year of Software QA experience', ar: 'سنة من خبرة ضمان جودة البرمجيات' },
   },
 
