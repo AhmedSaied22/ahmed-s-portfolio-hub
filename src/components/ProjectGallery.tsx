@@ -14,6 +14,11 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
+  // Reset index when images change (important for the modal)
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [images]);
+
   const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   }, [images.length]);
@@ -40,11 +45,11 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-    
+
     if (isRTL) {
       if (isLeftSwipe) goToPrevious();
       if (isRightSwipe) goToNext();
@@ -63,18 +68,19 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
   }
 
   return (
-    <div 
+    <div
       className="relative group"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
       {/* Main Image */}
-      <div className="aspect-video bg-muted overflow-hidden">
+      <div className="aspect-video bg-muted overflow-hidden rounded-lg">
         <img
+          key={`${title}-${currentIndex}`}
           src={images[currentIndex]}
           alt={`${title} screenshot ${currentIndex + 1}`}
-          className="w-full h-full object-cover transition-opacity duration-300"
+          className="w-full h-full object-cover transition-all duration-500 animate-fade-in"
         />
       </div>
 
@@ -109,11 +115,10 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                index === currentIndex
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${index === currentIndex
                   ? 'bg-primary w-4'
                   : 'bg-foreground/30 hover:bg-foreground/50'
-              }`}
+                }`}
               aria-label={`Go to image ${index + 1}`}
             />
           ))}

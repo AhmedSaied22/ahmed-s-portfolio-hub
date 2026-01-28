@@ -24,7 +24,7 @@ export const translations = {
     flutterCV: { en: 'Flutter CV', ar: 'سيرة Flutter' },
     testingCV: { en: 'Testing CV', ar: 'سيرة الاختبار' },
     viewProjects: { en: 'View Projects', ar: 'عرض المشاريع' },
-    tagline: { en: 'Flutter developer with a QA mindset.', ar: 'مطور Flutter بعقلية QA.' },
+    tagline: { en: 'Software Tester with Mobile Development Experience.', ar: 'مطور برمجيات بخبرة في تطوير تطبيقات الهاتف.' },
   },
 
   // About
