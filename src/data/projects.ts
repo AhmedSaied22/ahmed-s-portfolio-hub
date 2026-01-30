@@ -135,9 +135,10 @@ export const projects: Project[] = [
         ar: 'احتاجت الشركة إلى نظام موحد لطلبات الجملة وتحديثات التصنيع ومبيعات المعارض السنوية.'
       },
       role: {
-        en: 'Flutter Developer and Software Tester (QA) covering test cases, regression/exploratory testing, and defect reporting.',
-        ar: 'مطور Flutter ومختبر برمجيات (QA) يغطي حالات الاختبار واختبارات الانحدار/الاستكشاف وتوثيق العيوب.'
+        en: 'Flutter Developer & Software Tester. Built core app features and performed manual testing, test case design, regression/exploratory testing, API validation, and defect reporting.',
+        ar: 'مطور Flutter ومختبر برمجيات. شاركت في تطوير خصائص التطبيق وتنفيذ الاختبارات اليدوية، تصميم حالات الاختبار، اختبارات الانحدار والاستكشاف، التحقق من الـ APIs، وتوثيق العيوب.'
       },
+
       challenge: {
         en: 'Verifying complex order workflows with multiple user roles and payment/reporting paths.',
         ar: 'التحقق من سير عمل الطلبات المعقد مع أدوار مستخدمين متعددة ومسارات الدفع والتقارير.'

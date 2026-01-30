@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { ProjectCard } from './ProjectCard';
 import { CaseStudyModal } from './CaseStudyModal';
-import { projects, Project } from '@/data/projects';
+import { Project } from '@/data/projects';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useProjects } from '@/hooks/useProjects';
 
 export const Projects = () => {
   const { t } = useLanguage();
+  const { projects, loading } = useProjects();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'featured' | 'practice' | 'all'>('featured');
@@ -47,11 +49,10 @@ export const Projects = () => {
               key={filter.key}
               type="button"
               onClick={() => setActiveFilter(filter.key)}
-              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${
-                activeFilter === filter.key
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground'
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${activeFilter === filter.key
+                ? 'bg-primary text-primary-foreground border-primary'
+                : 'bg-background text-muted-foreground border-border hover:border-primary/50 hover:text-foreground'
+                }`}
             >
               {filter.label}
             </button>
