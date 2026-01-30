@@ -1,5 +1,6 @@
 export interface Project {
   id: string;
+  order?: number;
   title: { en: string; ar: string };
   description: { en: string; ar: string };
   highlights: { en: string[]; ar: string[] };
@@ -10,6 +11,7 @@ export interface Project {
   storeStatus?: 'internal' | 'comingSoon';
   googlePlayUrl?: string;
   appStoreUrl?: string;
+  githubUrl?: string;
   caseStudy: {
     problem: { en: string; ar: string };
     role: { en: string; ar: string };

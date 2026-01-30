@@ -29,6 +29,7 @@ export async function getProjectsFromFirestore(): Promise<Project[]> {
                 storeStatus: data.storeStatus,
                 googlePlayUrl: data.googlePlayUrl,
                 appStoreUrl: data.appStoreUrl,
+                githubUrl: data.githubUrl,
                 caseStudy: {
                     problem: data.caseStudy?.problem || { en: '', ar: '' },
                     role: data.caseStudy?.role || { en: '', ar: '' },

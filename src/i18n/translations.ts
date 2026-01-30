@@ -142,6 +142,7 @@ export const translations = {
     subtitle: { en: 'Selected work across production, internal, and upcoming releases', ar: 'مختارات من أعمال الإنتاج والتطبيقات الداخلية والإصدارات القادمة' },
     googlePlay: { en: 'Google Play', ar: 'Google Play' },
     appStore: { en: 'App Store', ar: 'App Store' },
+    github: { en: 'GitHub', ar: 'GitHub' },
     caseStudy: { en: 'Case Study', ar: 'دراسة الحالة' },
     internalNote: { en: 'Internal company app (not publicly available)', ar: 'تطبيق داخلي للشركة (غير متاح للعامة)' },
     comingSoonNote: { en: 'Coming soon', ar: 'قريباً' },

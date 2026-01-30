@@ -29,7 +29,7 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
 
   return (
     <TooltipProvider>
-      <div 
+      <div
         className="group bg-background border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-200 relative"
         dir={isRTL ? 'rtl' : 'ltr'}
         onMouseEnter={() => setIsHovered(true)}
@@ -52,7 +52,7 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
         )}
 
         <ProjectGallery images={project.images} title={project.title[language]} />
-        
+
         <div className="p-6">
           {project.badge && (
             <div className="mb-3">
@@ -105,6 +105,19 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
                 <a href={project.appStoreUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-3.5 h-3.5" />
                   {t('projects.appStore')}
+                </a>
+              </Button>
+            )}
+            {project.githubUrl && (
+              <Button
+                asChild
+                size="sm"
+                variant="outline"
+                className="rounded-lg gap-1.5 text-xs"
+              >
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  {t('projects.github')}
                 </a>
               </Button>
             )}
