@@ -105,7 +105,7 @@ export const Hero = () => {
                   size="lg"
                   className="rounded-xl gap-2"
                 >
-                  <a href="https://drive.google.com/file/d/1OMjyf-AKdHjBGZA19UBsxmVrOZJ-V7MS/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <a href="https://drive.google.com/file/d/1T_YpmHSoY0x4H6gjFj3NUOyYkGOfW5LG/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                     <Download className="w-4 h-4" />
                     {t('hero.testingCV')}
                   </a>

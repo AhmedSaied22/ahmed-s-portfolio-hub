@@ -21,12 +21,17 @@
     --primary: 160 84% 39%;
     --primary-hover: 161 94% 30%;
     --primary-foreground: 0 0% 100%;
+    --primary-soft: 160 84% 15%;
+    /* For badge backgrounds */
+    --primary-soft-foreground: 160 84% 65%;
+    /* For badge text */
 
     --secondary: 215 16% 47%;
     --secondary-foreground: 222 47% 11%;
 
     --muted: 214 32% 91%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 16% 40%;
+    /* Improved contrast */
 
     --accent: 160 84% 39%;
     --accent-foreground: 0 0% 100%;
@@ -54,8 +59,8 @@
     --surface-elevated: 0 0% 100%;
     --text-primary: 222 47% 11%;
     --text-secondary: 215 16% 47%;
-    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-    --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.04);
+    --shadow-elevated: 0 10px 20px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
   }
 
   .dark {
@@ -69,8 +74,13 @@
     --popover-foreground: 220 14% 90%;
 
     --primary: 160 84% 39%;
-    --primary-hover: 158 64% 52%;
+    --primary-hover: 160 72% 42%;
+    /* Tightened for better consistency */
     --primary-foreground: 0 0% 100%;
+    --primary-soft: 160 84% 15%;
+    /* For badge backgrounds */
+    --primary-soft-foreground: 160 84% 65%;
+    /* For badge text */
 
     --secondary: 217 33% 17%;
     --secondary-foreground: 220 14% 90%;
@@ -114,6 +124,8 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    /* Account for fixed navbar (64px = 4rem + buffer) */
   }
 
   body {

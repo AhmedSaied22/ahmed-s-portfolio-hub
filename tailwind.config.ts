@@ -33,6 +33,8 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           hover: "hsl(var(--primary-hover))",
           foreground: "hsl(var(--primary-foreground))",
+          soft: "hsl(var(--primary-soft))",
+          "soft-foreground": "hsl(var(--primary-soft-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

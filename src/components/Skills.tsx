@@ -1,8 +1,10 @@
 import { Smartphone, TestTube, Settings, Wrench } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export const Skills = () => {
   const { t, isRTL } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
 
   const skillGroups = [
     {
@@ -28,7 +30,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section ref={ref} className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="section-container">
         <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-12 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('skills.title')}
@@ -37,8 +39,9 @@ export const Skills = () => {
           {skillGroups.map((group, index) => (
             <div
               key={group.titleKey}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors opacity-0 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'
+                }`}
+              style={{ animationDelay: isVisible ? `${index * 0.1}s` : '0s' }}
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10">
@@ -50,7 +53,7 @@ export const Skills = () => {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full"
+                    className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
                   >
                     {skill}
                   </span>

@@ -1,9 +1,11 @@
 import { Smartphone, ClipboardCheck, Zap } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { translations } from '@/i18n/translations';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export const Services = () => {
   const { t, language, isRTL } = useLanguage();
+  const { ref, isVisible } = useScrollReveal();
 
   const services = [
     {
@@ -27,7 +29,7 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section ref={ref} id="services" className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="section-container">
         <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('services.title')}
@@ -40,8 +42,9 @@ export const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.titleKey}
-              className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-200 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'
+                }`}
+              style={{ animationDelay: isVisible ? `${index * 0.1}s` : '0s' }}
             >
               <div className="p-3 rounded-xl bg-primary/10 w-fit mb-4">
                 <service.icon className="w-6 h-6 text-primary" />

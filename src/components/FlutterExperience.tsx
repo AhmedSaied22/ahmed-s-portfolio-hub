@@ -2,9 +2,11 @@
 import { Smartphone, Server, Database, CreditCard, Layers } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { translations } from '@/i18n/translations';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export const FlutterExperience = () => {
     const { t, language, isRTL } = useLanguage();
+    const { ref, isVisible } = useScrollReveal();
 
     const groups = translations.flutterExperience.groups;
 
@@ -37,7 +39,7 @@ export const FlutterExperience = () => {
     ];
 
     return (
-        <section className="section-padding bg-card/50" dir={isRTL ? 'rtl' : 'ltr'}>
+        <section ref={ref} className="section-padding bg-card/50" dir={isRTL ? 'rtl' : 'ltr'}>
             <div className="section-container">
                 <div className="max-w-4xl mx-auto">
                     <div className={`mb-10 ${isRTL ? 'text-right' : 'text-center'}`}>
@@ -61,7 +63,10 @@ export const FlutterExperience = () => {
                             return (
                                 <div
                                     key={group.key}
-                                    className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors ${index === experienceGroups.length - 1 ? 'md:col-span-2 md:w-2/3 md:mx-auto' : ''}`}
+                                    className={`bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 ${index === experienceGroups.length - 1 ? 'md:col-span-2 md:w-2/3 md:mx-auto' : ''
+                                        } ${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'
+                                        }`}
+                                    style={{ animationDelay: isVisible ? `${index * 0.1}s` : '0s' }}
                                 >
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="p-2 rounded-lg bg-primary/10">

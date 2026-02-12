@@ -4,10 +4,12 @@ import { CaseStudyModal } from './CaseStudyModal';
 import { Project } from '@/data/projects';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useProjects } from '@/hooks/useProjects';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export const Projects = () => {
   const { t } = useLanguage();
   const { projects, loading } = useProjects();
+  const { ref, isVisible } = useScrollReveal();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState<'featured' | 'practice' | 'all'>('featured');
@@ -34,7 +36,7 @@ export const Projects = () => {
       : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="projects" className="section-padding bg-card">
+    <section ref={ref} id="projects" className="section-padding bg-card">
       <div className="section-container">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
           {t('projects.title')}
@@ -60,18 +62,40 @@ export const Projects = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <div
-              key={project.id}
-              className="opacity-0 animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <ProjectCard
-                project={project}
-                onOpenCaseStudy={handleOpenCaseStudy}
-              />
-            </div>
-          ))}
+          {loading ? (
+            // Loading skeletons
+            Array.from({ length: 6 }).map((_, index) => (
+              <div
+                key={`skeleton-${index}`}
+                className="bg-background border border-border rounded-xl overflow-hidden animate-pulse"
+              >
+                <div className="aspect-video bg-muted" />
+                <div className="p-6 space-y-4">
+                  <div className="h-4 bg-muted rounded w-3/4" />
+                  <div className="h-3 bg-muted rounded w-full" />
+                  <div className="h-3 bg-muted rounded w-5/6" />
+                  <div className="flex gap-2">
+                    <div className="h-6 bg-muted rounded w-16" />
+                    <div className="h-6 bg-muted rounded w-16" />
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            filteredProjects.map((project, index) => (
+              <div
+                key={project.id}
+                className={`${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'
+                  }`}
+                style={{ animationDelay: isVisible ? `${index * 0.1}s` : '0s' }}
+              >
+                <ProjectCard
+                  project={project}
+                  onOpenCaseStudy={handleOpenCaseStudy}
+                />
+              </div>
+            ))
+          )}
         </div>
       </div>
 
