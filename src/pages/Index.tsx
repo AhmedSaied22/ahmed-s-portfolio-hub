@@ -10,8 +10,10 @@ import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { useScrollDepthTracker } from '@/hooks/useScrollDepthTracker';
 
 const Index = () => {
+  useScrollDepthTracker();
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-background">

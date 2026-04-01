@@ -3,10 +3,14 @@ import { Smartphone, Server, Database, CreditCard, Layers } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { translations } from '@/i18n/translations';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSectionTracker } from '@/hooks/useSectionTracker';
+import { useSectionTimer } from '@/hooks/useSectionTimer';
 
 export const FlutterExperience = () => {
     const { t, language, isRTL } = useLanguage();
     const { ref, isVisible } = useScrollReveal();
+    useSectionTracker('flutter-experience');
+    useSectionTimer('flutter-experience');
 
     const groups = translations.flutterExperience.groups;
 
@@ -39,7 +43,7 @@ export const FlutterExperience = () => {
     ];
 
     return (
-        <section ref={ref} className="section-padding bg-card/50" dir={isRTL ? 'rtl' : 'ltr'}>
+        <section ref={ref} id="flutter-experience" className="section-padding bg-card/50" dir={isRTL ? 'rtl' : 'ltr'}>
             <div className="section-container">
                 <div className="max-w-4xl mx-auto">
                     <div className={`mb-10 ${isRTL ? 'text-right' : 'text-center'}`}>

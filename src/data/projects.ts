@@ -6,7 +6,7 @@ export interface Project {
   highlights: { en: string[]; ar: string[] };
   techTags: string[];
   images: string[];
-  category: 'featured' | 'practice';
+  category: 'testing' | 'flutter' | ('testing' | 'flutter')[];
   badge?: { en: string; ar: string };
   storeStatus?: 'internal' | 'comingSoon';
   googlePlayUrl?: string;
@@ -56,12 +56,13 @@ export const projects: Project[] = [
         'تكامل REST API'
       ]
     },
-    techTags: ['Flutter', 'Firebase', 'AdMob', 'REST API', 'PDF Viewer'],
+    techTags: ['Flutter', 'API Testing (Postman)', 'QA Testing', 'Firebase', 'AdMob', 'REST API'],
     images: [
       '/projects/sport1.jpg',
       '/projects/sport2.jpg'
     ],
-    category: 'featured',
+    category: ['flutter', 'testing'],
+    order: 3,
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.assuit.pe_student',
     // App Store not available for Sport Sphere
     caseStudy: {
@@ -70,8 +71,8 @@ export const projects: Project[] = [
         ar: 'افتقر طلاب التربية البدنية إلى منصة مركزية للوصول إلى المواد التعليمية وتتبع تقدمهم الأكاديمي.'
       },
       role: {
-        en: 'Full-stack Flutter developer responsible for architecture, UI/UX implementation, and backend integration.',
-        ar: 'مطور Flutter متكامل مسؤول عن الهندسة وتنفيذ واجهة المستخدم وتكامل الخلفية.'
+        en: 'Flutter Developer & QA Tester. Built the app and executed API testing (Postman), exploratory, and regression testing. Identified bugs, documented them, and verified AdMob integration and key user journeys.',
+        ar: 'مطور Flutter ومختبر برمجيات (QA). قمت بتطوير التطبيق وتنفيذ اختبارات API (باستخدام Postman)، بالإضافة للاختبارات الاستكشافية والانحدارية. قمت بتوثيق الأخطاء بدقة والتأكد من توافق إعلانات AdMob والرحلات الأساسية للمستخدم.'
       },
       challenge: {
         en: 'PE students needed a centralized platform to access educational materials, track their academic progress, and download resources for offline study.',
@@ -98,8 +99,8 @@ export const projects: Project[] = [
   {
     id: 'filanto',
     title: {
-      en: 'Filanto',
-      ar: 'فيلانتو'
+      en: 'Filanto Store',
+      ar: 'فيلانتو ستور'
     },
     description: {
       en: 'A footwear app managing wholesale, manufacturing, and annual exhibition sales.',
@@ -121,24 +122,22 @@ export const projects: Project[] = [
         'تخزين مؤقت للوصول السريع'
       ]
     },
-    techTags: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'Firebase', 'UI/UX', 'Testing/QA'],
+    techTags: ['Flutter', 'API Testing (Postman)', 'QA Testing', 'BLoC', 'Clean Architecture'],
     images: [
       '/projects/filanto.png'
     ],
-    category: 'featured',
-    badge: {
-      en: 'Coming Soon',
-      ar: 'قريباً'
-    },
-    storeStatus: 'comingSoon',
+    category: ['flutter', 'testing'],
+    order: 4,
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.filanto.store',
+    appStoreUrl: 'https://apps.apple.com/us/app/filanto-store/id6758596540',
     caseStudy: {
       problem: {
         en: 'The business needed a unified system for wholesale orders, manufacturing updates, and annual exhibition sales.',
         ar: 'احتاجت الشركة إلى نظام موحد لطلبات الجملة وتحديثات التصنيع ومبيعات المعارض السنوية.'
       },
       role: {
-        en: 'Flutter Developer & Software Tester. Built core app features and performed manual testing, test case design, regression/exploratory testing, API validation, and defect reporting.',
-        ar: 'مطور Flutter ومختبر برمجيات. شاركت في تطوير خصائص التطبيق وتنفيذ الاختبارات اليدوية، تصميم حالات الاختبار، اختبارات الانحدار والاستكشاف، التحقق من الـ APIs، وتوثيق العيوب.'
+        en: 'Flutter Developer & QA Tester. Handled UI development and comprehensive QA testing. Designed API tests (Postman) and performed manual/regression testing across role-based workflows. Verified order lifecycles, PDF generation, and caching.',
+        ar: 'مطور Flutter ومختبر برمجيات. قمت بالتطوير بالإضافة لتصميم وتنفيذ اختبارات الـ API (عبر Postman) والاختبارات اليدوية والانحدارية لتدفقات العمل المختلفة. تأكدت من سلامة دورة حياة الطلبات وإنشاء ملفات الـ PDF وسلوك التخزين المؤقت.'
       },
 
       challenge: {
@@ -195,7 +194,8 @@ export const projects: Project[] = [
     images: [
       '/projects/ask.jpg'
     ],
-    category: 'featured',
+    category: 'flutter',
+    order: 5,
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.developers.askalwashm',
     appStoreUrl: 'https://apps.apple.com/sa/app/%D8%A7%D8%B3%D8%A3%D9%84-%D8%A7%D9%84%D9%88%D8%B4%D9%85/id1669547503',
     caseStudy: {
@@ -260,7 +260,8 @@ export const projects: Project[] = [
       '/projects/ekram.png',
       '/projects/ekram2.png'
     ],
-    category: 'featured',
+    category: 'flutter',
+    order: 6,
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.charitylocator.ikram',
     appStoreUrl: 'https://apps.apple.com/sa/app/ekram-%D8%A7%D9%83%D8%B1%D8%A7%D9%85/id6738956464',
     caseStudy: {
@@ -332,7 +333,8 @@ export const projects: Project[] = [
       '/projects/carstory2.png',
       '/projects/car3.jpg'
     ],
-    category: 'featured',
+    category: 'flutter',
+    order: 7,
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.echo.carstor',
     appStoreUrl: 'https://apps.apple.com/sa/app/car-story/id6737169387',
     caseStudy: {
@@ -396,7 +398,8 @@ export const projects: Project[] = [
     images: [
       '/projects/taskful.jpg'
     ],
-    category: 'featured',
+    category: 'flutter',
+    order: 8,
     badge: {
       en: 'Private / Internal',
       ar: 'خاص / داخلي'
@@ -463,7 +466,8 @@ export const projects: Project[] = [
       '/projects/sale.jpg',
       '/projects/sale2.jpg'
     ],
-    category: 'practice',
+    category: 'flutter',
+    order: 9,
     badge: {
       en: 'Practice / Training',
       ar: 'تدريب / ممارسة'
@@ -495,6 +499,233 @@ export const projects: Project[] = [
           'تدريب واضح على تدفقات البيع',
           'تحسين الإلمام بخطوات الدفع',
           'سيناريوهات تدريب قابلة لإعادة الاستخدام'
+        ]
+      }
+    }
+  },
+  {
+    id: 'swag-labs-playwright',
+    title: {
+      en: 'Swag Labs',
+      ar: 'سواج لابز (أتمتة الاختبار)'
+    },
+    description: {
+      en: 'Automation project built with Playwright and TypeScript to validate core e-commerce workflows using a reusable and maintainable test structure.',
+      ar: 'مشروع أتمتة مبني بـ Playwright و TypeScript للتحقق من تدفقات التجارة الإلكترونية الأساسية باستخدام بنية اختبار قابلة لإعادة الاستخدام والصيانة.'
+    },
+    highlights: {
+      en: [
+        'Login & Auth validation',
+        'Inventory coverage',
+        'Cart & Checkout flow automation',
+        'Page Object Model structure',
+        'Reusable fixtures & Storage State',
+        'HTML & Allure reporting'
+      ],
+      ar: [
+        'التحقق من تسجيل الدخول والمصادقة',
+        'تغطية المخزون',
+        'أتمتة تدفق عربة التسوق والدفع',
+        'بنية نموذج كائن الصفحة (POM)',
+        'تجهيزات قابلة لإعادة الاستخدام وحالة التخزين',
+        'تقارير HTML و Allure'
+      ]
+    },
+    techTags: [
+      'Playwright',
+      'TypeScript',
+      'QA Automation',
+      'POM',
+      'Fixtures',
+      'Storage State',
+      'Allure'
+    ],
+    images: [
+      '/projects/saucedemo1.jpg',
+      '/projects/saucedemo2.png',
+      '/projects/saucedemo3.png'
+    ],
+    category: 'testing',
+    order: 1,
+    githubUrl: 'https://github.com/AhmedSaied22/playwright-saucedemo-tests',
+    caseStudy: {
+      problem: {
+        en: 'I wanted to move beyond isolated test scripts and build a structured automation project that reflects how real-world test frameworks are organized and maintained.',
+        ar: 'أردت تجاوز نصوص الاختبارات المعزولة وبناء مشروع أتمتة مهيكل يعكس كيفية تنظيم أطر الاختبار الحقيقية وصيانتها.'
+      },
+      role: {
+        en: 'Built and organized the automation project from scratch using Playwright and TypeScript. Applied Page Object Model, reusable fixtures, locators, assertions, storage state, and reporting tools.',
+        ar: 'قمت ببناء وتنظيم مشروع الأتمتة من الصفر باستخدام Playwright و TypeScript. طبقت بنية نموذج كائن الصفحة (POM)، الملحقات (Fixtures)، حالات التخزين (Storage State)، وأدوات التقرير (HTML/Allure).'
+      },
+      challenge: {
+        en: 'Creating a maintainable automation structure to cover key e-commerce flows while ensuring execution efficiency and session reuse.',
+        ar: 'إنشاء بنية أتمتة قابلة للصيانة لتغطية تدفقات التجارة الإلكترونية الرئيسية مع ضمان كفاءة التنفيذ وإعادة استخدام الجلسة.'
+      },
+      solution: {
+        en: 'Developed a robust testing framework applying Page Object Model (POM) to split locators and operations, fixtures for setup stability, and storage state to preserve authentication, complemented by rich HTML and Allure reporting.',
+        ar: 'طورت إطار اختبار قوي يعتمد على بنية POM وتقنيات Fixtures بالإضافة إلى الحفاظ على الجلسات المفتوحة مع تقديم تقارير مفصلة عبر تقنيات حديثة من بينها Allure.'
+      },
+      results: {
+        en: [
+          'Built a reusable automation project from scratch',
+          'Improved practical understanding of Playwright project structure',
+          'Strengthened locator, assertion, and maintainable design practices',
+          'Applied reporting and authenticated session reuse comprehensively'
+        ],
+        ar: [
+          'بناء مشروع أتمتة متكامل من البداية وبأفضل الممارسات الممكنة',
+          'تحسين الفهم العملي لبنية تطوير مشاريع Playwright',
+          'تقوية مهارات استخدام الـ (locators)، والتحقق من سير العمل عبر بنية مستقرة',
+          'تطبيق تقنيات إعادة استخدام الجلسات وإصدار التقارير المفصلة'
+        ]
+      }
+    }
+  },
+  {
+    id: 'playwright-automation-template',
+    title: {
+      en: 'Playwright Automation Template',
+      ar: 'قالب أتمتة Playwright'
+    },
+    description: {
+      en: 'Reusable Playwright starter template designed to speed up project setup and keep automation structure clean, scalable, and easy to reuse.',
+      ar: 'قالب أتمتة قابل لإعادة الاستخدام مبني على Playwright ، مصمم لتسريع إعداد المشاريع والحفاظ على بنية نظيفة وقابلة للتوسع.'
+    },
+    highlights: {
+      en: [
+        'Reusable folder structure',
+        'Clean starter configuration',
+        'Scalable organization',
+        'Junior-friendly layout',
+        'Easier project bootstrapping'
+      ],
+      ar: [
+        'بنية مجلدات جاهزة وقابلة لإعادة الاستخدام',
+        'إعداد أساسي سريع ونظيف',
+        'تنظيم قابل للتوسع',
+        'تخطيط ملائم للمبتدئين',
+        'تسهيل بدء المشاريع الجديدة'
+      ]
+    },
+    techTags: [
+      'Playwright',
+      'TypeScript',
+      'Template',
+      'POM',
+      'Fixtures',
+      'CI/CD Basics'
+    ],
+    images: [
+      '/projects/playwright-template1.png'
+    ],
+    category: 'testing',
+    order: 2,
+    githubUrl: 'https://github.com/AhmedSaied22/Playwright-automation-template',
+    caseStudy: {
+      problem: {
+        en: 'Starting every automation project from scratch takes extra time and often leads to inconsistent structure, repeated setup, and weaker reusability.',
+        ar: 'البدء في كل مشروع أتمتة من الصفر يستهلك وقتاً إضافياً وغالباً ما يؤدي إلى بنية غير متسقة، إعدادات متكررة، وضعف في إمكانيات إعادة الاستخدام.'
+      },
+      role: {
+        en: 'Created and organized the template structure, prepared the base folders and setup, and designed it to support reusable patterns and easier project onboarding.',
+        ar: 'قمت بإنشاء وتنظيم بنية القالب، وإعداد المجلدات الأساسية والتكوين، وتصميمه لدعم الأنماط القابلة لإعادة الاستخدام لتسهيل الانضمام إلى المشاريع.'
+      },
+      challenge: {
+        en: 'Starting every automation project from scratch takes extra time and often leads to inconsistent structure, repeated setup, and weaker reusability.',
+        ar: 'البدء في كل مشروع أتمتة من الصفر يستهلك وقتاً إضافياً وغالباً ما يؤدي إلى بنية غير متسقة، إعدادات متكررة، وضعف في إمكانيات إعادة الاستخدام.'
+      },
+      solution: {
+        en: 'Built a structured starter template that standardizes initial Playwright configurations and provides a clean, maintainable base framework to scale efficiently for future automation work.',
+        ar: 'بناء قالب ابتدائي مهيكل يوحد الإعدادات الأولية لـ Playwright ويوفر إطار عمل نظيف وقابل للصيانة ليكون جاهزاً لدعم نمو المشاريع المستقبلية بفعالية وسرعة.'
+      },
+      results: {
+        en: [
+          'Reduced repeated setup effort by establishing an out-of-the-box foundation',
+          'Improved consistency and code structure across future testing projects',
+          'Created a better reusable and easy-to-understand starting point',
+          'Made project organization easier to explain and scale for teams'
+        ],
+        ar: [
+          'تقليل الجهد المبذول في الإعداد من خلال بناء أساس جاهز للاستخدام الفوري',
+          'تحسين الاتساق وجودة الكود في جميع مشاريع الأتمتة القادمة',
+          'إنشاء نقطة انطلاق قوية للمشاريع يمكن إعادة استخدامها وفهمها بسهولة',
+          'تسهيل شرح بنية المشروع للفرق التقنية وتوسيع النطاق بكفاءة أعلى'
+        ]
+      }
+    }
+  },
+  {
+    id: 'magento-automation',
+    title: {
+      en: 'E-commerce Automation Testing',
+      ar: 'اختبار أتمتة التجارة الإلكترونية'
+    },
+    description: {
+      en: 'Selenium automation framework for testing e-commerce flows including search, cart, and checkout functionality.',
+      ar: 'إطار أتمتة Selenium لاختبار تدفقات التجارة الإلكترونية بما في ذلك البحث وسلة التسوق وعملية الشراء.'
+    },
+    highlights: {
+      en: [
+        'Page Object Model (POM)',
+        'Search & Cart Tests',
+        'Checkout Flow Tests',
+        'TestNG Reports',
+        'Bug Reporting',
+        'Security Testing (XSS, SQL Injection)'
+      ],
+      ar: [
+        'نموذج كائن الصفحة (POM)',
+        'اختبارات البحث والسلة',
+        'اختبارات تدفق الشراء',
+        'تقارير TestNG',
+        'تقارير الأخطاء',
+        'اختبار الأمان (XSS، حقن SQL)'
+      ]
+    },
+    techTags: [
+      'Java',
+      'Selenium',
+      'TestNG',
+      'Maven',
+      'Page Object Model'
+    ],
+    images: [
+      '/projects/magento.png'
+    ],
+    category: 'testing',
+    order: 3,
+    badge: {
+      en: 'Practice / Task',
+      ar: 'تدريب / مهمة'
+    },
+    githubUrl: 'https://github.com/AhmedSaied22/sprintsAutomationTask',
+    caseStudy: {
+      problem: {
+        en: 'Manual testing of e-commerce flows is time-consuming and error-prone, requiring automated coverage for critical user journeys.',
+        ar: 'الاختبار اليدوي لتدفقات التجارة الإلكترونية يستغرق وقتاً طويلاً وعرضة للأخطاء، ويتطلب تغطية آلية للرحلات الحرجة للمستخدم.'
+      },
+      role: {
+        en: 'QA Automation Engineer responsible for designing test framework, writing automated tests, and documenting bugs.',
+        ar: 'مهندس أتمتة ضمان الجودة مسؤول عن تصميم إطار الاختبار وكتابة الاختبارات الآلية وتوثيق الأخطاء.'
+      },
+      challenge: {
+        en: 'Creating a maintainable automation framework that covers search, cart, and checkout functionality with clear reporting.',
+        ar: 'إنشاء إطار أتمتة قابل للصيانة يغطي وظائف البحث والسلة والشراء مع تقارير واضحة.'
+      },
+      solution: {
+        en: 'Built a Selenium framework using Page Object Model with TestNG for test execution, including screenshot capture and detailed test reports.',
+        ar: 'بناء إطار Selenium باستخدام نموذج كائن الصفحة مع TestNG لتنفيذ الاختبارات، بما في ذلك التقاط الشاشة وتقارير الاختبار المفصلة.'
+      },
+      results: {
+        en: [
+          'Automated 8+ test cases covering critical flows',
+          'Implemented bug reporting with screenshots',
+          'Performed basic security testing'
+        ],
+        ar: [
+          'أتمتة أكثر من 8 حالات اختبار تغطي التدفقات الحرجة',
+          'تنفيذ تقارير الأخطاء مع لقطات الشاشة',
+          'إجراء اختبار أمان أساسي'
         ]
       }
     }

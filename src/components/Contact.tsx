@@ -5,6 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/hooks/useLanguage';
+import { useSectionTracker } from '@/hooks/useSectionTracker';
+import { useSectionTimer } from '@/hooks/useSectionTimer';
+import { trackButtonClick } from '@/lib/analytics';
 
 const contactLinks = [
   {
@@ -45,6 +48,10 @@ const WEB3FORMS_ACCESS_KEY = '89d0b0ea-cc2b-4528-90a7-cf7816e295d2';
 export const Contact = () => {
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
+
+  useSectionTracker('contact');
+  useSectionTimer('contact');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -61,7 +68,7 @@ export const Contact = () => {
     try {
       const form = e.currentTarget;
       const formDataToSend = new FormData(form);
-      
+
       // Check honeypot - if filled, it's a bot
       const honeypot = formDataToSend.get('botcheck');
       if (honeypot) {
@@ -121,10 +128,11 @@ export const Contact = () => {
               size="lg"
               className="w-full rounded-xl bg-primary text-primary-foreground hover:bg-primary-hover gap-2"
             >
-              <a 
-                href="https://api.whatsapp.com/send/?phone=201229649437&text=Hello%20Ahmed%2C%20I%20am%20interested%20in%20your%20services" 
-                target="_blank" 
+              <a
+                href="https://api.whatsapp.com/send/?phone=201229649437&text=Hello%20Ahmed%2C%20I%20am%20interested%20in%20your%20services"
+                target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackButtonClick('whatsapp_contact', 'whatsapp')}
               >
                 <MessageCircle className="w-5 h-5" />
                 {t('contact.chatNow')}
@@ -161,7 +169,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className={isRTL ? 'lg:order-1' : 'lg:order-2'}>
+          <div className={`p-8 bg-card border border-border rounded-2xl shadow-sm ${isRTL ? 'lg:order-1' : 'lg:order-2'}`}>
             <h3 className={`text-xl font-semibold text-foreground mb-4 ${isRTL ? 'text-right' : ''}`}>
               {t('contact.sendMessage')}
             </h3>
@@ -170,12 +178,12 @@ export const Contact = () => {
               <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
               <input type="hidden" name="subject" value="New Contact Form Submission - Portfolio" />
               <input type="hidden" name="from_name" value="Ahmed Saied Portfolio" />
-              
+
               {/* Honeypot anti-spam field - hidden from users */}
-              <input 
-                type="checkbox" 
-                name="botcheck" 
-                className="hidden" 
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
                 style={{ display: 'none' }}
                 tabIndex={-1}
                 autoComplete="off"

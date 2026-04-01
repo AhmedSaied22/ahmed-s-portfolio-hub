@@ -1,6 +1,7 @@
 import { MessageCircle, Download, Github, Linkedin, Mail, ArrowDown, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
+import { trackButtonClick } from '@/lib/analytics';
 import ahmedPhoto from '@/assets/ahmed-photo.png';
 
 const socialLinks = [
@@ -31,7 +32,7 @@ export const Hero = () => {
                 <img
                   src={ahmedPhoto}
                   alt="Ahmed Saied"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover animate-float"
                 />
               </div>
             </div>
@@ -59,8 +60,11 @@ export const Hero = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-lg md:text-xl text-primary font-medium">
-                  {t('hero.tagline')}
+                <p className="text-lg md:text-xl font-medium">
+                  <span className="bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
+                    {t('hero.tagline1')}
+                  </span>
+                  <span className="text-primary">{t('hero.tagline2')}</span>
                 </p>
                 <p className="text-base md:text-lg text-muted-foreground font-medium">
                   {t('hero.title')}
@@ -78,36 +82,54 @@ export const Hero = () => {
                   }`}
                 style={{ animationDelay: '0.3s' }}
               >
+                {/* PRIMARY: Testing CV */}
                 <Button
                   asChild
                   size="lg"
                   className="rounded-xl bg-primary text-primary-foreground hover:bg-primary-hover gap-2"
                 >
-                  <a href="https://api.whatsapp.com/send/?phone=201229649437&text=Hello%20Ahmed%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://drive.google.com/file/d/1T_YpmHSoY0x4H6gjFj3NUOyYkGOfW5LG/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackButtonClick('testing_cv', 'google_drive')}
+                  >
+                    <Download className="w-4 h-4" />
+                    {t('hero.testingCV')}
+                  </a>
+                </Button>
+                {/* SECONDARY: WhatsApp */}
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="rounded-xl gap-2"
+                >
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=201229649437&text=Hello%20Ahmed%2C%20I%20am%20interested%20in%20your%20services"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackButtonClick('whatsapp_hero', 'whatsapp')}
+                  >
                     <MessageCircle className="w-5 h-5" />
                     {t('hero.chatWhatsApp')}
                   </a>
                 </Button>
+                {/* TERTIARY: Flutter CV */}
                 <Button
                   asChild
                   variant="outline"
                   size="lg"
-                  className="rounded-xl gap-2"
+                  className="rounded-xl gap-2 text-muted-foreground hover:text-foreground"
                 >
-                  <a href="https://drive.google.com/file/d/1Cquuw4xtNJfcQtJQTZle2eNjSGuNdC3O/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://drive.google.com/file/d/1Cquuw4xtNJfcQtJQTZle2eNjSGuNdC3O/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackButtonClick('flutter_cv', 'google_drive')}
+                  >
                     <Download className="w-4 h-4" />
                     {t('hero.flutterCV')}
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="rounded-xl gap-2"
-                >
-                  <a href="https://drive.google.com/file/d/1T_YpmHSoY0x4H6gjFj3NUOyYkGOfW5LG/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-                    <Download className="w-4 h-4" />
-                    {t('hero.testingCV')}
                   </a>
                 </Button>
               </div>

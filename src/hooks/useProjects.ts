@@ -28,21 +28,18 @@ export function useProjects(): UseProjectsResult {
         async function fetchProjects() {
             try {
                 setLoading(true);
+
                 const firestoreProjects = await getProjectsFromFirestore();
 
                 if (mounted) {
-                    // Only use Firestore data if we got results
-                    if (firestoreProjects.length > 0) {
-                        console.log('✅ Projects loaded from Firestore:', firestoreProjects.length);
+                    if (firestoreProjects && firestoreProjects.length > 0) {
                         setProjects(firestoreProjects);
                         setIsFromFirestore(true);
+                        setError(null);
+                        console.log('✅ Fetched projects from Firestore successfully');
                     } else {
-                        console.log('⚠️ Firestore empty, using static data');
-                        // Fallback to static data if Firestore is empty
-                        setProjects(staticProjects);
-                        setIsFromFirestore(false);
+                        throw new Error('No projects found in Firestore, falling back to static');
                     }
-                    setError(null);
                 }
             } catch (err) {
                 console.warn('Failed to fetch from Firestore, using static data:', err);

@@ -14,28 +14,29 @@ export const translations = {
   hero: {
     greeting: { en: 'Hello, I\'m', ar: 'مرحباً، أنا' },
     name: { en: 'Ahmed Saied', ar: 'أحمد سعيد' },
-    title: { en: 'Software Developer (Mobile Applications) | Software QA (Manual + Selenium Automation)', ar: 'مطور برمجيات (تطبيقات الهاتف) | ضمان جودة البرمجيات (يدوي + أتمتة Selenium)' },
+    title: { en: 'Manual Testing · API Testing · Playwright (TypeScript) · CI/CD Basics · Software Development Background', ar: 'اختبار يدوي · اختبار API · Playwright (TypeScript) · أساسيات CI/CD · خلفية في تطوير البرمجيات' },
     intro: {
-      en: 'I\'m a Flutter mobile developer with 2+ years of experience building production-ready apps. I also have 1 year of hands-on Software QA experience in manual testing and Selenium automation, focusing on stable releases and great user experience.',
-      ar: 'أنا مطور تطبيقات موبايل باستخدام Flutter بخبرة تزيد عن سنتين في بناء تطبيقات جاهزة للإنتاج. بالإضافة إلى خبرة سنة في مجال ضمان الجودة (Software QA) تشمل الاختبار اليدوي وأتمتة الاختبارات باستخدام Selenium، مع التركيز على الاستقرار وتجربة مستخدم ممتازة.'
+      en: 'I\'m a Software Tester with 1 year of hands-on Quality Control experience. My daily work involves manual testing (functional, regression, exploratory), API testing with Postman, writing detailed bug reports, and executing test cases to help deliver stable releases. On the automation side, I use Playwright (TypeScript) with POM, fixtures, and reporting for comprehensive end-to-end flow automation, and I also have foundational knowledge of Selenium (Java). Beyond testing, I bring 2+ years of Flutter development experience and continue to take on freelance mobile projects. My development background helps me understand code logic, spot edge cases, and communicate more effectively with dev teams. My goal is to grow deeper in QA, strengthen my automation expertise, and explore performance testing.',
+      ar: 'أنا مهندس جودة برمجيات بخبرة عملية سنة في مراقبة الجودة. يتضمن عملي اليومي الاختبار اليدوي (وظيفي، انحداري، استكشافي)، اختبار API باستخدام Postman، كتابة تقارير أخطاء مفصلة، وتنفيذ حالات الاختبار لضمان إصدارات مستقرة. على صعيد الأتمتة، استخدم Playwright (TypeScript) مع POM للتشغيل الآلي، بالإضافة إلى معرفة أساسية بـ Selenium (Java). إلى جانب الاختبار، أمتلك خبرة تتجاوز السنتين في تطوير تطبيقات Flutter. تساعدني خلفيتي البرمجية في فهم المنطق، اكتشاف الحالات النادرة، والتواصل بفعالية أكبر مع فرق التطوير. هدفي هو التعمق في مجال الجودة، وتعزيز مهاراتي في الأتمتة، واستكشاف اختبار الأداء.'
     },
     qaMindset: { en: 'QA Mindset', ar: 'عقلية الجودة' },
     chatWhatsApp: { en: 'Chat on WhatsApp', ar: 'تواصل عبر واتساب' },
     flutterCV: { en: 'Flutter CV', ar: 'سيرة Flutter' },
     testingCV: { en: 'Testing CV', ar: 'سيرة الاختبار' },
     viewProjects: { en: 'View Projects', ar: 'عرض المشاريع' },
-    tagline: { en: 'Software Tester with Mobile Development Experience.', ar: 'مطور برمجيات بخبرة في تطوير تطبيقات الهاتف.' },
+    tagline1: { en: 'Software QC Engineer', ar: 'مهندس جودة برمجيات' },
+    tagline2: { en: ' | QA Automation | Flutter Developer', ar: ' | أتمتة الجودة | مطور Flutter' },
   },
 
   // About
   about: {
     title: { en: 'About Me', ar: 'نبذة عني' },
     content: {
-      en: 'I\'m a Flutter Developer with experience building production-ready mobile applications. I specialize in clean architecture, state management (Bloc, Provider), REST API integration, and Firebase services. Beyond development, I bring 1 year of Software QA experience in structured testing—including functional, regression, and exploratory testing. I create detailed test cases, comprehensive bug reports, and ensure quality through API testing with Postman and automation using Selenium (Java). My dual background helps me deliver both high-quality code and thoroughly tested applications.',
-      ar: 'أنا مطور Flutter ذو خبرة في بناء تطبيقات الهاتف الجاهزة للإنتاج. أتخصص في الهندسة النظيفة، وإدارة الحالة (Bloc, Provider)، وتكامل REST API، وخدمات Firebase. بالإضافة إلى التطوير، لدي سنة من الخبرة في ضمان جودة البرمجيات في الاختبار المنظم—بما في ذلك الاختبار الوظيفي، واختبار الانحدار، والاختبار الاستكشافي. أقوم بإنشاء حالات اختبار مفصلة، وتقارير أخطاء شاملة، وضمان الجودة من خلال اختبار API باستخدام Postman والأتمتة باستخدام Selenium (Java). خلفيتي المزدوجة تساعدني على تقديم كود عالي الجودة وتطبيقات مختبرة بدقة.'
+      en: 'I\'m a Software Tester with 1 year of hands-on experience in Quality Control (QC). My daily work involves manual testing (functional, regression, exploratory), API testing with Postman, writing detailed bug reports, and executing test cases to help deliver stable, reliable releases. On the automation side, I actively use Playwright (TypeScript) to build scalable end-to-end testing frameworks using Page Object Model (POM), fixtures, and detailed reporting. I also have foundational knowledge of Selenium (Java). Beyond testing, I have 2+ years of experience as a Flutter Developer. I still take on freelance mobile projects and apply clean architecture, state management (BLoC, Provider), and API integration. This development background helps me understand code logic, spot edge cases, and communicate more effectively with development teams. My goal is to continue growing in QA, strengthen my automation skills, and eventually expand into CI/CD integration and performance testing.',
+      ar: 'أنا مختبر برمجيات بخبرة عملية سنة في مراقبة الجودة (QC). عملي اليومي يشمل الاختبار اليدوي (وظيفي، انحدار، استكشافي)، اختبار API باستخدام Postman، وكتابة تقارير أخطاء مفصّلة، وتنفيذ حالات الاختبار لضمان إصدارات مستقرة وموثوقة. في مجال الأتمتة، استخدم Playwright (TypeScript) لبناء أطر اختبار قابلة للتطوير باستخدام POM و fixtures والتقارير المفصلة، مع معرفة أساسية بـ Selenium (Java). بالإضافة للاختبار، لدي خبرة تزيد عن سنتين كمطور Flutter. أواصل العمل على مشاريع موبايل كعمل حر وأطبق الهندسة النظيفة، وإدارة الحالة، وتكامل API. هذه الخلفية التطويرية تساعدني على فهم منطق الكود بفعالية أكبر وتسهل تواصلي مع فرق التطوير. هدفي هو مواصلة النمو في QA، وتعزيز مهاراتي في الأتمتة، والتوسع مستقبلاً في تكامل CI/CD واختبار الأداء.'
     },
-    flutterDeveloper: { en: 'Software Developer (Mobile Applications)', ar: 'مطور برمجيات (تطبيقات الهاتف)' },
-    qaExperience: { en: '1 year of Software QA experience', ar: 'سنة من خبرة ضمان جودة البرمجيات' },
+    flutterDeveloper: { en: 'Software Tester (QC) — 1 Year Experience', ar: 'مختبر برمجيات (QC) — سنة خبرة' },
+    qaExperience: { en: 'Flutter Developer — 2+ Years (Freelance)', ar: 'مطور Flutter — خبرة +2 سنوات (عمل حر)' },
   },
 
   // Skills
@@ -56,21 +57,21 @@ export const translations = {
         '1 year hands-on QA focused on manual testing (functional, regression, exploratory)',
         'Strong bug reporting: steps, expected vs actual, severity/priority, evidence',
         'Created and maintained test cases and improved coverage',
-        'API testing with Postman (status codes, request/response validation)',
-        'Automation testing using Selenium (Java) for UI flows',
+        'API testing using Postman (status codes, request/response validation, business rules)',
+        'Automation using Playwright (TypeScript) for end-to-end flows, with POM, fixtures, and reporting',
       ],
       ar: [
-        'سنة من الخبرة العملية في ضمان الجودة مع التركيز على الاختبار اليدوي (وظيفي، انحدار، استكشافي)',
+        'سنة من الخبرة العملية في ضمان الجودة مع التركيز على الاختبار اليدوي (وظيفي، انحداري، استكشافي)',
         'تقارير أخطاء قوية: الخطوات، المتوقع مقابل الفعلي، الخطورة/الأولوية، الأدلة',
         'إنشاء وصيانة حالات الاختبار وتحسين التغطية',
-        'اختبار API باستخدام Postman (رموز الحالة، التحقق من الطلب/الاستجابة)',
-        'اختبار الأتمتة باستخدام Selenium (Java) لتدفقات واجهة المستخدم',
+        'اختبار API باستخدام Postman (التحقق من رموز الحالة والطلب/الاستجابة والعمليات)',
+        'أتمتة الاختبارات عبر Playwright (TypeScript) لتدفقات واجهة المستخدم، مع POM والتقارير',
       ],
     },
     growthPlan: { en: 'Growth Plan', ar: 'خطة النمو' },
     growthText: {
-      en: 'I\'m actively developing advanced automation skills and planning to grow into performance testing (e.g., JMeter) and modern automation frameworks.',
-      ar: 'أقوم بتطوير مهارات الأتمتة المتقدمة بنشاط وأخطط للنمو في اختبار الأداء (مثل JMeter) وأطر الأتمتة الحديثة.'
+      en: 'Actively improving automation skills and expanding into API automation, CI/CD workflows, and performance testing (e.g., JMeter).',
+      ar: 'أعمل بجد لتحسين مهاراتي في الأتمتة والتوسع في أتمتة الـ API وتدفقات CI/CD واختبار الأداء (مثل JMeter).'
     },
   },
 
@@ -130,8 +131,8 @@ export const translations = {
       title: { en: 'Automation + API Testing', ar: 'اختبار الأتمتة + API' },
       description: { en: 'Efficient automated testing for faster releases.', ar: 'اختبار آلي فعال لإصدارات أسرع.' },
       features: {
-        en: ['Selenium automation scripts', 'Postman API testing', 'UI flow automation', 'Clear test documentation'],
-        ar: ['سكربتات أتمتة Selenium', 'اختبار API باستخدام Postman', 'أتمتة تدفقات واجهة المستخدم', 'توثيق اختبار واضح'],
+        en: ['Playwright automation scripts', 'Postman API testing', 'End-to-end flow automation', 'HTML / Allure reporting'],
+        ar: ['سكربتات أتمتة Playwright', 'اختبار API باستخدام Postman', 'أتمتة تدفقات شاملة', 'تقارير HTML / Allure'],
       },
     },
   },
@@ -142,13 +143,13 @@ export const translations = {
     subtitle: { en: 'Selected work across production, internal, and upcoming releases', ar: 'مختارات من أعمال الإنتاج والتطبيقات الداخلية والإصدارات القادمة' },
     googlePlay: { en: 'Google Play', ar: 'Google Play' },
     appStore: { en: 'App Store', ar: 'App Store' },
-    github: { en: 'GitHub', ar: 'GitHub' },
+    github: { en: 'GitHub Repo', ar: 'مستودع GitHub' },
     caseStudy: { en: 'Case Study', ar: 'دراسة الحالة' },
     internalNote: { en: 'Internal company app (not publicly available)', ar: 'تطبيق داخلي للشركة (غير متاح للعامة)' },
     comingSoonNote: { en: 'Coming soon', ar: 'قريباً' },
     filters: {
-      featured: { en: 'Featured', ar: 'مميزة' },
-      practice: { en: 'Practice', ar: 'تدريب' },
+      flutter: { en: 'Flutter', ar: 'Flutter' },
+      testing: { en: 'Testing', ar: 'اختبار' },
       all: { en: 'All', ar: 'الكل' },
     },
     problem: { en: 'Problem', ar: 'المشكلة' },
@@ -163,11 +164,11 @@ export const translations = {
 
   // Contact
   contact: {
-    title: { en: 'Get in Touch', ar: 'تواصل معي' },
-    subtitle: { en: 'Open to Flutter and QA opportunities', ar: 'منفتح لفرص Flutter وضمان الجودة' },
+    title: { en: 'Let\'s Work Together', ar: 'لنعمل معاً' },
+    subtitle: { en: 'Open to Software Testing, QA Automation, and Flutter freelance opportunities — let\'s connect.', ar: 'منفتح لوظائف اختبار البرمجيات، أتمتة QA، ومشاريع Flutter كعمل حر — دعنا نتواصل.' },
     letsConnect: { en: 'Let\'s Connect', ar: 'دعنا نتواصل' },
     sendMessage: { en: 'Send a Message', ar: 'أرسل رسالة' },
-    preferWhatsApp: { en: 'Prefer WhatsApp? Chat now', ar: 'تفضل واتساب؟ تواصل الآن' },
+    preferWhatsApp: { en: 'Need a dedicated tester, QA automation engineer, or Flutter developer? Let\'s talk.', ar: 'هل تحتاج إلى مختبر برمجيات أو مهندس أتمتة QA أو مطور Flutter؟ تواصل معي.' },
     chatNow: { en: 'Chat on WhatsApp', ar: 'تواصل عبر واتساب' },
     name: { en: 'Your Name', ar: 'اسمك' },
     email: { en: 'Your Email', ar: 'بريدك الإلكتروني' },

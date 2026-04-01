@@ -30,7 +30,7 @@ export const ProjectCard = ({ project, onOpenCaseStudy }: ProjectCardProps) => {
   return (
     <TooltipProvider>
       <div
-        className="group bg-background border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-200 relative"
+        className="group bg-background border border-border rounded-xl overflow-hidden hover:border-primary/40 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 ease-out relative"
         dir={isRTL ? 'rtl' : 'ltr'}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

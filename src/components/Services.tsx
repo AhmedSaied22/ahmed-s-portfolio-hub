@@ -2,18 +2,16 @@ import { Smartphone, ClipboardCheck, Zap } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { translations } from '@/i18n/translations';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSectionTracker } from '@/hooks/useSectionTracker';
+import { useSectionTimer } from '@/hooks/useSectionTimer';
 
 export const Services = () => {
   const { t, language, isRTL } = useLanguage();
   const { ref, isVisible } = useScrollReveal();
+  useSectionTracker('services');
+  useSectionTimer('services');
 
   const services = [
-    {
-      icon: Smartphone,
-      titleKey: 'services.flutterDev.title',
-      descriptionKey: 'services.flutterDev.description',
-      features: translations.services.flutterDev.features[language],
-    },
     {
       icon: ClipboardCheck,
       titleKey: 'services.manualQA.title',
@@ -26,10 +24,17 @@ export const Services = () => {
       descriptionKey: 'services.automationAPI.description',
       features: translations.services.automationAPI.features[language],
     },
+    {
+      icon: Smartphone,
+      titleKey: 'services.flutterDev.title',
+      descriptionKey: 'services.flutterDev.description',
+      features: translations.services.flutterDev.features[language],
+    },
   ];
 
   return (
-    <section ref={ref} id="services" className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section ref={ref} id="services" className="relative section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       <div className="section-container">
         <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('services.title')}

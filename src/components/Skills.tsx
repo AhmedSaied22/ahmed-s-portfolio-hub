@@ -1,10 +1,14 @@
 import { Smartphone, TestTube, Settings, Wrench } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSectionTracker } from '@/hooks/useSectionTracker';
+import { useSectionTimer } from '@/hooks/useSectionTimer';
 
 export const Skills = () => {
   const { t, isRTL } = useLanguage();
   const { ref, isVisible } = useScrollReveal();
+  useSectionTracker('skills');
+  useSectionTimer('skills');
 
   const skillGroups = [
     {
@@ -15,12 +19,12 @@ export const Skills = () => {
     {
       titleKey: 'skills.qa',
       icon: TestTube,
-      skills: ['STLC/SDLC', 'Functional Testing', 'Regression Testing', 'Exploratory Testing', 'Test Cases', 'Bug Reporting'],
+      skills: ['STLC / SDLC', 'Functional Testing', 'Regression & Smoke Testing', 'Exploratory Testing', 'Test Case Design', 'Bug Reporting & Verification'],
     },
     {
       titleKey: 'skills.automation',
       icon: Settings,
-      skills: ['Selenium (Java)', 'UI Flow Testing', 'Test Automation'],
+      skills: ['Playwright (TypeScript)', 'Page Object Model (POM)', 'Fixtures', 'Locators & Assertions', 'Storage State', 'HTML / Allure Reporting', 'CI/CD Basics', 'Selenium (Java - Basics)'],
     },
     {
       titleKey: 'skills.tools',
@@ -30,7 +34,8 @@ export const Skills = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section ref={ref} id="skills" className="relative section-padding" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       <div className="section-container">
         <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-12 ${isRTL ? 'text-right' : 'text-center'}`}>
           {t('skills.title')}
@@ -53,7 +58,7 @@ export const Skills = () => {
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
+                    className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full hover:bg-primary/10 hover:text-primary hover:scale-105 hover:-translate-y-0.5 transition-all duration-300 cursor-default"
                   >
                     {skill}
                   </span>

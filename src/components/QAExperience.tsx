@@ -2,15 +2,19 @@ import { CheckCircle, TrendingUp } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { translations } from '@/i18n/translations';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useSectionTracker } from '@/hooks/useSectionTracker';
+import { useSectionTimer } from '@/hooks/useSectionTimer';
 
 export const QAExperience = () => {
   const { t, language, isRTL } = useLanguage();
   const { ref, isVisible } = useScrollReveal();
+  useSectionTracker('qa-experience');
+  useSectionTimer('qa-experience');
 
   const experiencePoints = translations.qaExperience.points[language];
 
   return (
-    <section ref={ref} className="section-padding bg-card" dir={isRTL ? 'rtl' : 'ltr'}>
+    <section ref={ref} id="qa-experience" className="section-padding bg-card" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="section-container">
         <div className="max-w-3xl mx-auto">
           <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-4 ${isRTL ? 'text-right' : 'text-center'}`}>

@@ -18,13 +18,13 @@ export const CaseStudyModal = ({ project, isOpen, onClose }: CaseStudyModalProps
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-background/80 backdrop-blur-sm"
         onClick={onClose}
       />
-      
+
       {/* Modal */}
-      <div className={`relative bg-card border border-border rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-xl animate-fade-in ${isRTL ? 'text-right' : ''}`}>
+      <div className={`relative bg-card border border-border rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-xl animate-slide-up-scale ${isRTL ? 'text-right' : ''}`}>
         {/* Header */}
         <div className={`sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           <h2 className="text-2xl font-bold text-foreground">{project.title[language]}</h2>

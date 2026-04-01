@@ -29,13 +29,11 @@ export const ScrollToTop = () => {
         });
     };
 
-    if (!isVisible) return null;
-
     return (
         <Button
             onClick={scrollToTop}
             size="icon"
-            className="fixed bottom-8 right-8 z-40 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-300 animate-fade-in"
+            className={`fixed bottom-8 right-8 z-40 rounded-full shadow-lg bg-primary text-primary-foreground hover:bg-primary-hover transition-all duration-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
             aria-label="Scroll to top"
         >
             <ArrowUp className="w-5 h-5" />
