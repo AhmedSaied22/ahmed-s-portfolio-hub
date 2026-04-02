@@ -1,11 +1,13 @@
-import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { GithubIcon, LinkedinIcon } from '@/components/icons';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/AhmedSaied22', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/ahmed-saieed/', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:ahmedsaied2019201@gmail.com', label: 'Email' },
-  { icon: MessageCircle, href: 'https://api.whatsapp.com/send/?phone=201229649437&text=Hello%20Ahmed%2C%20I%20am%20interested%20in%20your%20services', label: 'WhatsApp' },
+  { icon: GithubIcon, href: 'https://github.com/AhmedSaied22', labelKey: 'common.github' },
+  { icon: LinkedinIcon, href: 'https://www.linkedin.com/in/ahmed-saieed/', labelKey: 'common.linkedin' },
+  { icon: Mail, href: 'mailto:ahmedsaied2019201@gmail.com', labelKey: 'common.email' },
+  { icon: MessageCircle, href: 'https://api.whatsapp.com/send/?phone=201229649437&text=Hello%20Ahmed%2C%20I%20am%20interested%20in%20your%20services', labelKey: 'common.whatsapp' },
 ];
 
 export const Footer = () => {
@@ -19,19 +21,25 @@ export const Footer = () => {
           <p className="text-sm text-muted-foreground">
             © {currentYear} {t('hero.name')}. {t('footer.rights')}
           </p>
-          
+
           <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                aria-label={link.label}
-              >
-                <link.icon className="w-5 h-5" />
-              </a>
+              <Tooltip key={link.labelKey}>
+                <TooltipTrigger asChild>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                    aria-label={t(link.labelKey)}
+                  >
+                    <link.icon className="w-5 h-5 md:w-6 md:h-6" />
+                  </a>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{t(link.labelKey)}</p>
+                </TooltipContent>
+              </Tooltip>
             ))}
           </div>
         </div>

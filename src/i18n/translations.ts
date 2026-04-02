@@ -14,10 +14,10 @@ export const translations = {
   hero: {
     greeting: { en: 'Hello, I\'m', ar: 'مرحباً، أنا' },
     name: { en: 'Ahmed Saied', ar: 'أحمد سعيد' },
-    title: { en: 'Manual Testing · API Testing · Playwright (TypeScript) · CI/CD Basics · Software Development Background', ar: 'اختبار يدوي · اختبار API · Playwright (TypeScript) · أساسيات CI/CD · خلفية في تطوير البرمجيات' },
+    title: { en: 'QA Automation · API Testing · Flutter Developer', ar: 'أتمتة الجودة · اختبار API · مطور Flutter' },
     intro: {
-      en: 'I\'m a Software Tester with 1 year of hands-on Quality Control experience. My daily work involves manual testing (functional, regression, exploratory), API testing with Postman, writing detailed bug reports, and executing test cases to help deliver stable releases. On the automation side, I use Playwright (TypeScript) with POM, fixtures, and reporting for comprehensive end-to-end flow automation, and I also have foundational knowledge of Selenium (Java). Beyond testing, I bring 2+ years of Flutter development experience and continue to take on freelance mobile projects. My development background helps me understand code logic, spot edge cases, and communicate more effectively with dev teams. My goal is to grow deeper in QA, strengthen my automation expertise, and explore performance testing.',
-      ar: 'أنا مهندس جودة برمجيات بخبرة عملية سنة في مراقبة الجودة. يتضمن عملي اليومي الاختبار اليدوي (وظيفي، انحداري، استكشافي)، اختبار API باستخدام Postman، كتابة تقارير أخطاء مفصلة، وتنفيذ حالات الاختبار لضمان إصدارات مستقرة. على صعيد الأتمتة، استخدم Playwright (TypeScript) مع POM للتشغيل الآلي، بالإضافة إلى معرفة أساسية بـ Selenium (Java). إلى جانب الاختبار، أمتلك خبرة تتجاوز السنتين في تطوير تطبيقات Flutter. تساعدني خلفيتي البرمجية في فهم المنطق، اكتشاف الحالات النادرة، والتواصل بفعالية أكبر مع فرق التطوير. هدفي هو التعمق في مجال الجودة، وتعزيز مهاراتي في الأتمتة، واستكشاف اختبار الأداء.'
+      en: "I specialize in manual testing, API validation, and Playwright automation — focused on delivering stable, reliable releases. With 2+ years of Flutter development, I bring a developer's perspective to testing — spotting edge cases and collaborating effectively with dev teams.",
+      ar: 'أنا متخصص في اختبار البرمجيات اليدوي، والتحقق من الـ API، والأتمتة باستخدام Playwright — بهدف تقديم إصدارات مستقرة وموثوقة. بفضل خبرتي التي تزيد عن عامين في تطوير تطبيقات Flutter، أضيف منظور المطور لعملية الاختبار — لضمان اكتشاف الحالات النادرة والتعاون بفعالية أكبر مع فرق التطوير.'
     },
     qaMindset: { en: 'QA Mindset', ar: 'عقلية الجودة' },
     chatWhatsApp: { en: 'Chat on WhatsApp', ar: 'تواصل عبر واتساب' },

@@ -12,39 +12,51 @@ export const Navbar = () => {
 
   const navLinks = [
     { href: '#home', labelKey: 'nav.home' },
-    { href: '#projects', labelKey: 'nav.projects' },
-    { href: '#services', labelKey: 'nav.services' },
     { href: '#about', labelKey: 'nav.about' },
+    { href: '#services', labelKey: 'nav.services' },
+    { href: '#projects', labelKey: 'nav.projects' },
     { href: '#contact', labelKey: 'nav.contact' },
   ];
 
   // Track active section on scroll
   useEffect(() => {
-    const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean);
+    const handleScroll = () => {
+      const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean) as HTMLElement[];
+      let currentSectionId = '';
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' }
-    );
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        // Section is considered active if its top is above the viewport middle or close to top
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          currentSectionId = section.id;
+          break;
+        }
+      }
 
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+      // Check if user is at the bottom of the page
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+        currentSectionId = sections[sections.length - 1]?.id || currentSectionId;
+      }
 
-    return () => observer.disconnect();
-  }, []);
+      if (currentSectionId && currentSectionId !== activeSection) {
+        setActiveSection(currentSectionId);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial check
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeSection]);
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Calculate top position accurately to handle fixed navbar and mobile scrolling quirks
+      const top = element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
@@ -170,8 +182,8 @@ export const Navbar = () => {
                     href={link.href}
                     onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
                     className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${isActive
-                        ? 'text-primary bg-primary/10'
-                        : 'text-muted-foreground hover:text-primary hover:bg-muted/50'
+                      ? 'text-primary bg-primary/10'
+                      : 'text-muted-foreground hover:text-primary hover:bg-muted/50'
                       } ${isRTL ? 'text-right' : ''}`}
                   >
                     {t(link.labelKey)}

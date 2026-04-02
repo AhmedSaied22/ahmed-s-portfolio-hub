@@ -1,13 +1,15 @@
-import { MessageCircle, Download, Github, Linkedin, Mail, ArrowDown, Shield } from 'lucide-react';
+import { MessageCircle, Download, Mail, ArrowDown, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { useLanguage } from '@/hooks/useLanguage';
 import { trackButtonClick } from '@/lib/analytics';
 import ahmedPhoto from '@/assets/ahmed-photo.png';
+import { GithubIcon, LinkedinIcon } from '@/components/icons';
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/AhmedSaied22', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://www.linkedin.com/in/ahmed-saieed/', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:ahmedsaied2019201@gmail.com', label: 'Email' },
+  { icon: GithubIcon, href: 'https://github.com/AhmedSaied22', labelKey: 'common.github' },
+  { icon: LinkedinIcon, href: 'https://www.linkedin.com/in/ahmed-saieed/', labelKey: 'common.linkedin' },
+  { icon: Mail, href: 'mailto:ahmedsaied2019201@gmail.com', labelKey: 'common.email' },
 ];
 
 export const Hero = () => {
@@ -28,11 +30,11 @@ export const Hero = () => {
           {/* Photo - Left Side */}
           <div className={`order-2 lg:order-1 flex justify-center ${isRTL ? 'lg:justify-end lg:order-2' : 'lg:justify-start'}`}>
             <div className="relative">
-              <div className="w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border bg-card">
+              <div className="w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden border-2 border-border bg-card shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <img
                   src={ahmedPhoto}
                   alt="Ahmed Saied"
-                  className="w-full h-full object-cover animate-float"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -60,15 +62,14 @@ export const Hero = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-lg md:text-xl font-medium">
-                  <span className="bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
+                <div className="flex flex-col gap-1.5 mt-2">
+                  <p className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary to-teal-400 bg-clip-text text-transparent">
                     {t('hero.tagline1')}
-                  </span>
-                  <span className="text-primary">{t('hero.tagline2')}</span>
-                </p>
-                <p className="text-base md:text-lg text-muted-foreground font-medium">
-                  {t('hero.title')}
-                </p>
+                  </p>
+                  <p className="text-base md:text-lg text-muted-foreground font-medium">
+                    {t('hero.title')}
+                  </p>
+                </div>
               </div>
 
               {/* Intro */}
@@ -89,7 +90,7 @@ export const Hero = () => {
                   className="rounded-xl bg-primary text-primary-foreground hover:bg-primary-hover gap-2"
                 >
                   <a
-                    href="https://drive.google.com/file/d/1T_YpmHSoY0x4H6gjFj3NUOyYkGOfW5LG/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1lGMzvJUVE5tvobgXgSfecEuDUrCcoLcX/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackButtonClick('testing_cv', 'google_drive')}
@@ -145,25 +146,31 @@ export const Hero = () => {
                   className={`inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors ${isRTL ? 'flex-row-reverse' : ''
                     }`}
                 >
-                  <ArrowDown className="w-4 h-4" />
+                  <ArrowDown className="w-5 h-5" />
                   <span className="text-sm font-medium">{t('hero.viewProjects')}</span>
                 </button>
 
-                <div className="h-4 w-px bg-border" />
+                <div className="h-5 w-px bg-border" />
 
                 {/* Social Links */}
                 <div className={`flex gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   {orderedSocialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
-                      aria-label={social.label}
-                    >
-                      <social.icon className="w-4 h-4" />
-                    </a>
+                    <Tooltip key={social.labelKey}>
+                      <TooltipTrigger asChild>
+                        <a
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                          aria-label={t(social.labelKey)}
+                        >
+                          <social.icon className="w-4 h-4 md:w-5 md:h-5" />
+                        </a>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{t(social.labelKey)}</p>
+                      </TooltipContent>
+                    </Tooltip>
                   ))}
                 </div>
               </div>

@@ -32,7 +32,7 @@ async function importProjects() {
             // Add order field for sorting
             const projectData = {
                 ...project,
-                order: i + 1, // 1-based ordering
+                order: project.order !== undefined ? project.order : (i + 1),
             };
 
             await setDoc(projectRef, projectData);
