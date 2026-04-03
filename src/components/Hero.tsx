@@ -90,7 +90,7 @@ export const Hero = () => {
                   className="rounded-xl bg-primary text-primary-foreground hover:bg-primary-hover gap-2"
                 >
                   <a
-                    href="https://drive.google.com/file/d/1lGMzvJUVE5tvobgXgSfecEuDUrCcoLcX/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1oa9R6ukORCUXytKM7oGsYqqtSIOoW7Q3/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackButtonClick('testing_cv', 'google_drive')}
